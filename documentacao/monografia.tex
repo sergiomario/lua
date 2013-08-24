@@ -40,7 +40,6 @@
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
-% ---
 		
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -321,7 +320,6 @@ novos voluntários do grupo
 contribuirão para a evolução do \abnTeX.
 
 \end{agradecimentos}
-% ---
 
 % ---
 % Epígrafe
@@ -428,15 +426,20 @@ contribuirão para a evolução do \abnTeX.
 % Introdução
 % ----------------------------------------------------------
 \chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
+\chapter{Introdução}
 
-Teste de introdução
+Teste Introdução
 
+\section{Motivação}
 
-% ----------------------------------------------------------
-% PARTE - preparação da pesquisa
-% ----------------------------------------------------------
-\part{Preparação da pesquisa}
+\section{Objetivos}
+
+\subsection{Geral}
+
+\subsection{Específicos}
+
+\section{Organização do Trabalho}
+
 
 % ----------------------------------------------------------
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
@@ -444,28 +447,17 @@ Teste de introdução
 
 \include{abntex2-modelo-include-comandos}
 
-% ----------------------------------------------------------
-% Parte de revisãod e literatura
-% ----------------------------------------------------------
-\part{programação}
-
 % ---
 % Capitulo de revisão de literatura
 % ---
-\chapter{programação}
+\chapter{Histórico}
+A linguagem Lua foi totalmente projetada, e implementada no Brasil, por Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes, que eram membros do Computer Graphics Technology Group na PUC-Rio, a Pontifícia Universidade Católica do Rio de Janeiro. Lua nasceu e cresceu no Tecgraf, Grupo de Tecnologia em Computação Gráfica da PUC-Rio. Atualmente, Lua é desenvolvida no laboratório Lablua. Tanto o Tecgraf quanto Lablua são laboratórios do Departamento de Informática da PUC-Rio.
 
-% ---
-\section{programação}
-% ---
+As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram uma grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
 
-% ----------------------------------------------------------
-% Resultados
-% ----------------------------------------------------------
-\part{Resultados}
+Versões de Lua antes da versão 5.0 foram liberadas sob uma licença similar à licença BSD. A partir da versão 5.0, Lua foi licenciada sob a licença MIT.
 
-% ---
-% primeiro capitulo de Resultados
-% ---
+Hoje a linguagem é uma das mais utilizads do mundo estando entre as vinte mais utilizadas.
 \chapter{lua}
 
 % ---
