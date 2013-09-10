@@ -1,1 +1,6 @@
 Makefile
+abntex2-alf.bst
+abntex2-options.bib
+abntex2.cls
+abntex2abrev.sty
+abntex2cite.sty
