@@ -464,7 +464,7 @@ Logo surgiu o primeiro protótipo, DEL - Linguagem para Especificação de Diál
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\linewidth]{imagens/imagem2.png}
-	\caption{Programa Gráfico Mestre}
+	\caption{Trecho de código da linguagem SOL}
 \end{figure}
 
 No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem que uma linguagem de configuração genérica, que fosse facilmente acoplável, portátil, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL. 
@@ -523,10 +523,31 @@ O tipo table implementa arrays associativos, isto é, arrays que podem ser index
 A verificação de tipos é um módulo que assegura que os operandos de um operador sejam de tipos compatíveis.
 
 \section{Escopo}
+O escopo de uma variável em uma linguagem é a faixa de instruções na qual a variável é visível. Uma variável é visível em uma instrução se puder ser referenciada nessa instrução, ou seja se uma instrução conseguer ter acesso a essa variável no bloco ou setor em que se encontra.
 
-% ---
-% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
-% ---
+Tendo em vista que existem dois tipos de escopo, sendo eles o escopo estático e o escopo dinâmico, Lua trabalha na modelagem de escopo dinâmico, logo baseia-se na sequência de chamadas de subprogramas. Dessa forma, o escopo pode ser determidado em tempo de execução.
+
+Assume-se que toda variável é uma variável global a menos que ela seja explicitamente declarada como uma variável local. Variáveis locais possuem escopo léxico, por isso podem ser livremente acessadas por funções definidas dentro do seu escopo ou bloco.
+
+Um bloco é uma lista de comandos; sintaticamente, um bloco é a mesma coisa que um trecho. Sendo que, o bloco pode ser explicitamente delimitado para produzir um único comando:
+
+-comando ::= do bloco end
+
+Blocos explícitos são úteis para controlar o escopo de declarações de variáveis, além de também usados às vezes para adicionar um comando return ou break no meio de outro bloco.
+
+Lua é uma linguagem com escopo léxico. O escopo das variáveis começa no primeiro comando depois da sua declaração e vai até o fim do bloco mais interno que inclui a declaração. Considere o seguinte exemplo:
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\linewidth]{imagens/imagem3.png}
+	\caption{Verificação de escopo em Lua}
+\end{figure}
+
+Note que, em uma declaração como local x = x, o novo x sendo declarado não está no escopo ainda e portanto o segundo x se refere a uma variável externa.
+
+Por causa das regras de escopo léxico, variáveis locais podem ser livremente acessadas por funções definidas dentro do seu escopo. Uma variável local usada por uma função mais interna é chamada de upvalue ou variável local externa, dentro da função mais interna.
+
+
 \bookmarksetup{startatroot} 
 % --- 
 
@@ -534,6 +555,10 @@ A verificação de tipos é um módulo que assegura que os operandos de um opera
 % Conclusão
 % ---
 \chapter{Conclusão}
+\cite{Sebesta}
+\cite{Valentim:2013:Online}
+
+
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ----------------------------------------------------------
@@ -544,7 +569,6 @@ A verificação de tipos é um módulo que assegura que os operandos de um opera
 % Referências bibliográficas
 % ----------------------------------------------------------
 \bibliography{referencia}
-\cite{Sebesta}
 
 
 % ----------------------------------------------------------
