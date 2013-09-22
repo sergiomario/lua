@@ -433,17 +433,19 @@ Em virtude do que foi mencionado, existiram muitas influênciasa para a escolha 
 \section{Objetivos}
 
 \subsection{Geral}
-Este trabalho tem como objetivo aplicar o conhecimento obtido na matéria de paradigmas de linguagem de programação a linguagem LUA, que é uma linguagem miltiparadígma. Aprodundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem LUA.
+Este trabalho tem como objetivo aplicar os conhecimentos obtidos na disciplina de paradigmas de linguagem de programação à linguagem LUA. Aprodundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem LUA.
 
 \subsection{Específicos}
-*Embasar historicamente a lingaguem.
-*Explicar o funcionamento da sintaxe e semântica.
-*Demonstrar os paradígmas envolvidos na linguagem.
-*Explicar e exemplificar o funcionamento de variáveis.
-	*Incluindo os tipos, sua vinculação, verificação de tipo e escopo.
-*Apresentar as vantagens, desvantagens e as áreas a qual LUA melhor se aplica.
-*Criar códigos para exemplificar os conceitos apresentados.
-%Continuar com os próximos temas que serão abordados
+Com base no objetivo geral derivam-se os seguintes objetivos específicos.
+\begin{itemize}
+\item Embasar historicamente a lingaguem.
+\item Explicar o funcionamento da sintaxe e semântica.
+\item Demonstrar os paradígmas envolvidos na linguagem.
+\item Explicar e exemplificar o funcionamento de variáveis. Incluindo os tipos, sua vinculação, verificação de tipo e escopo.
+\item Apresentar as vantagens, desvantagens e as áreas a qual LUA melhor se aplica.
+\item Criação códigos para exemplificar os conceitos apresentados.
+\end{itemize}
+
 \section{Organização do Trabalho}
 
 
@@ -475,7 +477,7 @@ Logo surgiu o primeiro protótipo, DEL - Linguagem para Especificação de Diál
 	\caption{Trecho de código da linguagem SOL}
 \end{figure}
 
-No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem que uma linguagem de configuração genérica, que fosse facilmente acoplável, portátil, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL. 
+No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portátil, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL. 
 
 As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram uma grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
 
@@ -488,7 +490,7 @@ Esta capítulo descreve os principais aspectos léxicos, sintáticos e semântic
 
 O estudo de linguagens de programação pode ser orientado à verificação dos aspectos semânticos e sintáticos de uma linguagem. Pois a sintaxe, é a forma das expressões e instruções, ou seja, como é feita a construção das mesmas. Não obstante, a semântica é o significado das expressões e instruções.
 
-\section{Convenções Léxicas e Sintáticas de Lua}
+\section{Convenções Léxicas}
 Em Lua, os nomes podem ser qualquer cadeia de letras, dígitos, e sublinhados que não começam com um dígito, assim como em outras linguagens tradicionais, como C/C++. Os identificadores são usados para nomear variáveis e campos de tabelas.
 
 Lua é uma linguagem que diferencia letras minúsculas de maiúsculas, por exemplo, and é uma palavra reservada, mas And e AND são dois nomes válidos diferentes. Como convenção, nomes que começam com um sublinhado seguido por letras maiúsculas são reservados para variáveis globais internas usadas por Lua.
@@ -496,9 +498,64 @@ Lua é uma linguagem que diferencia letras minúsculas de maiúsculas, por exemp
 As seguintes cadeias denotam outros itens léxicos:
 + - * == ~= <= >= < > = ( ) { } [ ] ; : , . .. ...
 
-As cadeias de caracteres literais podem ser delimitadas através do uso de aspas simples ou aspas duplas, e podem conter as seguintes seqüências de escape no estilo de C:  `contra-barra + a' (campainha), `contra-barra + b' (backspace), `contra-barra + f' (alimentação de formulário), `contra-barra + n' (quebra de linha), `contra-barra + r' (retorno de carro), `contra-barra + t' (tabulação horizontal), `contra-barra + v' (tabulação vertical), `contra-barra + contra-barra' (barra invertida), `contra-barra + aspas duplas' (citação [aspa dupla]) e `contra-barra + aspas simples' (apóstrofo [aspa simples]). Além disso, uma barra invertida seguida por uma quebra de linha real resulta em uma quebra de linha na cadeia de caracteres. Um caractere em uma cadeia de caracteres também pode ser especificado pelo seu valor numérico usando a seqüência de escape contra-barra + ddd, onde ddd é uma seqüência de até três dígitos decimais. (Note que se um caractere numérico representado como um seqüência de escape for seguido por um dígito, a seqüência de escape deve possuir exatamente três dígitos.) Cadeias de caracteres em Lua podem conter qualquer valor de 8 bits, incluindo zeros dentro delas, os quais podem ser especificados como `contra-barra + 0'.
+As cadeias de caracteres literais podem ser delimitadas através do uso de aspas simples ou aspas duplas, e podem conter as seguintes seqüências de escape no estilo de C:  `contra-barra + a' (campainha), `contra-barra + b' (backspace), `contra-barra + f' (alimentação de formulário), `contra-barra + n' (quebra de linha), `contra-barra + r' (retorno de carro), `contra-barra + t' (tabulação horizontal), `contra-barra + v' (tabulação vertical), `contra-barra + contra-barra' (barra invertida), `contra-barra + aspas duplas' (citação [aspa dupla]) e `contra-barra + aspas simples'. Além disso, uma barra invertida seguida por uma quebra de linha real resulta em uma quebra de linha na cadeia de caracteres. Um caractere em uma cadeia de caracteres também pode ser especificado pelo seu valor numérico usando a seqüência de escape contra-barra + ddd, onde ddd é uma seqüência de até três dígitos decimais. (Note que se um caractere numérico representado como um seqüência de escape for seguido por um dígito, a seqüência de escape deve possuir exatamente três dígitos.) Cadeias de caracteres em Lua podem conter qualquer valor de 8 bits, incluindo zeros dentro delas, os quais podem ser especificados como `contra-barra + 0'.
 
-Cadeias literais longas também podem ser definidas usando um formato longo delimitado por colchetes longos. Definimos uma abertura de colchete longo de nível n como um abre colchete seguido por n sinais de igual seguido por outro abre colchete. Dessa forma, uma abertura de colchete longo de nível 0 é escrita como [[, uma abertura de colchete longo de nível 1 é escrita como [=[ e assim por diante.	 Um fechamento de colchete longo é definido de maneira similar; por exemplo, um fechamento de colchete longo de nível 4 é escrito como ]====]. Uma cadeia de caracteres longa começa com uma abertura de colchete longo de qualquer nível e termina no primeiro fechamento de colchete longo do mesmo nível. Literais expressos desta forma podem se estender por várias linhas, não interpretam nenhuma seqüência de escape e ignoram colchetes longos de qualquer outro nível. Estes literais podem conter qualquer coisa, exceto um fechamento de colchete longo de nível igual ao da abertura.
+Cadeias literais longas podem ser definidas usando um formato longo delimitado por colchetes. Definimos uma abertura de colchete longo de nível n como um abre colchete seguido por n sinais de igual seguido por outro abre colchete. Dessa forma, uma abertura de colchete longo de nível 0 é escrita como [[, uma abertura de colchete longo de nível 1 é escrita como [=[ e assim por diante. Um fechamento de colchete longo é definido de maneira similar. Uma cadeia de caracteres longa começa com uma abertura de colchete longo de qualquer nível e termina no primeiro fechamento de colchete longo do mesmo nível. Literais expressos desta forma podem se estender por várias linhas, não interpretam nenhuma seqüência de escape e ignoram colchetes longos de qualquer outro nível. Estes literais podem conter qualquer coisa, exceto um fechamento de colchete longo de nível igual ao da abertura.
+
+As seguintes palavras-chave são reservadas e não podem ser utilizadas como nomes:
+
+and;
+
+break;
+
+do;
+
+else e elseif;
+
+end;
+
+false;
+
+for;
+
+function;
+
+if;
+
+in;
+
+local;
+
+nil;
+
+not;
+
+or;
+
+repeat;
+
+return;
+
+then;
+
+true;
+
+until;
+
+while.
+
+\section{Sintaxe de Lua}
+Aqui está a sintaxe completa de Lua na notação BNF estendida. (Ela não descreve as precedências dos operadores.)
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imagens/sintaxe1.png}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\linewidth]{imagens/sintaxe2.png}
+\end{figure}
 
 
 % ---
