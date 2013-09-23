@@ -11,7 +11,7 @@
 	% -- opções da classe memoir --
 	12pt,				% tamanho da fonte
 	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	twoside,			% para impressão em verso e anverso. Oposto a oneside
+	oneside,			% para impressão em verso e anverso. Oposto a twoside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
 	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
@@ -23,10 +23,6 @@
 	brazil,				% o último idioma é o principal do documento
 	]{abntex2}
 
-
-% ---
-% PACOTES
-% ---
 
 % ---
 % Pacotes fundamentais 
@@ -615,6 +611,21 @@ Lua é uma linguagem com escopo léxico. O escopo das variáveis começa no prim
 Note que, em uma declaração como local x = x, o novo x sendo declarado não está no escopo ainda e portanto o segundo x se refere a uma variável externa.
 
 Por causa das regras de escopo léxico, variáveis locais podem ser livremente acessadas por funções definidas dentro do seu escopo. Uma variável local usada por uma função mais interna é chamada de upvalue ou variável local externa, dentro da função mais interna.
+
+% \begin{table}
+% 	\centering
+% 	\begin{tabular}{|c|c|c|}
+% 		\hline
+% 		\multicolumn{3}{|c|}{Tabela de Exemplo}	\\
+% 		\hline
+% 		cell 1 & cell 2 & cell 3 \\
+% 		\hline
+% 		cell 4 & cell 5 & cell 6 \\
+% 		\hline
+% 	\end{tabular}
+% 	\label{completa}
+% 	\caption{Tabela com linhas e colunas}
+% \end{table}
 
 
 \bookmarksetup{startatroot} 
