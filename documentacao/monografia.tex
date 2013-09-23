@@ -504,45 +504,45 @@ Cadeias literais longas podem ser definidas usando um formato longo delimitado p
 
 As seguintes palavras-chave são reservadas e não podem ser utilizadas como nomes:
 
-and;
+and
 
-break;
+break
 
-do;
+do
 
-else e elseif;
+else e elseif
 
-end;
+end
 
-false;
+false
 
-for;
+for
 
-function;
+function
 
-if;
+if
 
-in;
+in
 
-local;
+local
 
-nil;
+nil
 
-not;
+not
 
-or;
+or
 
-repeat;
+repeat
 
-return;
+return
 
-then;
+then
 
-true;
+true
 
-until;
+until
 
-while.
+while
 
 \section{Sintaxe de Lua}
 Aqui está a sintaxe completa de Lua na notação BNF estendida. (Ela não descreve as precedências dos operadores.)
@@ -586,6 +586,10 @@ O tipo table implementa arrays associativos, isto é, arrays que podem ser index
 
 \section{Verificação de Tipos}
 A verificação de tipos é um módulo que assegura que os operandos de um operador sejam de tipos compatíveis.
+
+Em Lua devido a vinculação dinâmica de tipos, permite somente a verificação dinâmica de tipos. No entanto há uma desvantagem, pois é melhor detectar erros durante a compilação do que na execução porque, quanto mais cedo feita a correção melhor, normalmente terá menos custo.
+
+Sendo assim, a verificação de tipos em Lua é feita em tempo de execução pelo interpretador Lua.
 
 \section{Escopo}
 O escopo de uma variável em uma linguagem é a faixa de instruções na qual a variável é visível. Uma variável é visível em uma instrução se puder ser referenciada nessa instrução, ou seja se uma instrução conseguer ter acesso a essa variável no bloco ou setor em que se encontra.
