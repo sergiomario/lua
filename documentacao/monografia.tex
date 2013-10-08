@@ -37,6 +37,9 @@ brazil, % o último idioma é o principal do documento
 \usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
 \usepackage{color}	% Controle das cores
 \usepackage{graphicx}	% Inclusão de gráficos
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
 
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
@@ -108,8 +111,8 @@ pdfauthor={\@author},
 pdfcreator={LaTeX with abnTeX2},
 pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
 colorlinks=true, % false: boxed links; true: colored links
-     linkcolor=blue, % color of internal links
-     citecolor=blue, % color of links to bibliography
+     linkcolor=black, % color of internal links
+     citecolor=black, % color of links to bibliography
      filecolor=magenta, % color of file links
 urlcolor=blue,
 bookmarksdepth=4
@@ -173,68 +176,68 @@ bookmarksdepth=4
 % \begin{fichacatalografica}
 % \includepdf{fig_ficha_catalografica.pdf}
 % \end{fichacatalografica}
-\begin{fichacatalografica}
-\vspace*{\fill}	% Posição vertical
-\hrule	% Linha horizontal
-\begin{center}	% Minipage Centralizado
-\begin{minipage}[c]{12.5cm}	% Largura
+% \begin{fichacatalografica}
+% \vspace*{\fill}	% Posição vertical
+% \hrule	% Linha horizontal
+% \begin{center}	% Minipage Centralizado
+% \begin{minipage}[c]{12.5cm}	% Largura
 
-\imprimirautor
+% \imprimirautor
 
-\hspace{0.5cm} \imprimirtitulo / \imprimirautor. --
-\imprimirlocal, \imprimirdata-
+% \hspace{0.5cm} \imprimirtitulo / \imprimirautor. --
+% \imprimirlocal, \imprimirdata-
 
-\hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
+% \hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
 
-\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
+% \hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
 
-\hspace{0.5cm}
-\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
-\imprimirdata.}\\
+% \hspace{0.5cm}
+% \parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+% \imprimirdata.}\\
 
-\hspace{0.5cm}
-1. Palavra-chave1.
-2. Palavra-chave2.
-I. Orientador.
-II. Universidade xxx.
-III. Faculdade de xxx.
-IV. Título\\
+% \hspace{0.5cm}
+% 1. Palavra-chave1.
+% 2. Palavra-chave2.
+% I. Orientador.
+% II. Universidade xxx.
+% III. Faculdade de xxx.
+% IV. Título\\
 
-\hspace{8.75cm} CDU 02:141:005.7\\
+% \hspace{8.75cm} CDU 02:141:005.7\\
 
-\end{minipage}
-\end{center}
-\hrule
-\end{fichacatalografica}
+% \end{minipage}
+% \end{center}
+% \hrule
+% \end{fichacatalografica}
 % ---
 
 % ---
 % Inserir errata
 % ---
-\begin{errata}
-Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
+% \begin{errata}
+% Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
 
-\vspace{\onelineskip}
+% \vspace{\onelineskip}
 
-FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-Zootecnia, Universidade de São Paulo, São Paulo, 2011.
+% FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
+% reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
+% rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
+% cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
+% Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 
-\begin{table}[htb]
-\center
-\footnotesize
-\begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-  \hline
-   \textbf{Folha} & \textbf{Linha} & \textbf{Onde se lê} & \textbf{Leia-se} \\
-    \hline
-    1 & 10 & auto-conclavo & autoconclavo\\
-   \hline
-\end{tabular}
-\end{table}
+% \begin{table}[htb]
+% \center
+% \footnotesize
+% \begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
+%   \hline
+%    \textbf{Folha} & \textbf{Linha} & \textbf{Onde se lê} & \textbf{Leia-se} \\
+%     \hline
+%     1 & 10 & auto-conclavo & autoconclavo\\
+%    \hline
+% \end{tabular}
+% \end{table}
 
-\end{errata}
+% \end{errata}
 % ---
 
 % ---
@@ -248,37 +251,37 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 %
 % \includepdf{folhadeaprovacao_final.pdf}
 %
-\begin{folhadeaprovacao}
+% \begin{folhadeaprovacao}
 
-  \begin{center}
-    {\ABNTEXchapterfont\large\imprimirautor}
+%   \begin{center}
+%     {\ABNTEXchapterfont\large\imprimirautor}
 
-    \vspace*{\fill}\vspace*{\fill}
-    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
-    \vspace*{\fill}
+%     \vspace*{\fill}\vspace*{\fill}
+%     {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+%     \vspace*{\fill}
     
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        \imprimirpreambulo
-    \end{minipage}%
-    \vspace*{\fill}
-   \end{center}
+%     \hspace{.45\textwidth}
+%     \begin{minipage}{.5\textwidth}
+%         \imprimirpreambulo
+%     \end{minipage}%
+%     \vspace*{\fill}
+%    \end{center}
     
-   Trabalho aprovado. \imprimirlocal, \imprimirdata:
+%    Trabalho aprovado. \imprimirlocal, \imprimirdata:
 
-   \assinatura{\textbf{\imprimirorientador} \\ Orientador}
-   \assinatura{\textbf{Professor} \\ Convidado 1}
-   \assinatura{\textbf{Professor} \\ Convidado 2}
+%    \assinatura{\textbf{\imprimirorientador} \\ Orientador}
+%    \assinatura{\textbf{Professor} \\ Convidado 1}
+%    \assinatura{\textbf{Professor} \\ Convidado 2}
       
-   \begin{center}
-    \vspace*{0.5cm}
-    {\large\imprimirlocal}
-    \par
-    {\large\imprimirdata}
-    \vspace*{1cm}
-  \end{center}
+%    \begin{center}
+%     \vspace*{0.5cm}
+%     {\large\imprimirlocal}
+%     \par
+%     {\large\imprimirdata}
+%     \vspace*{1cm}
+%   \end{center}
   
-\end{folhadeaprovacao}
+% \end{folhadeaprovacao}
 % ---
 
 % ---
@@ -296,73 +299,73 @@ Zootecnia, Universidade de São Paulo, São Paulo, 2011.
 % ---
 % Agradecimentos
 % ---
-\begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
+% \begin{agradecimentos}
+% Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
+% Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
+% Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
+% projeto abn\TeX\ foram extraídos de
+% \url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
+% contribuíram para que a produção de trabalhos acadêmicos conforme
+% as normas ABNT com \LaTeX\ fosse possível.
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+% Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
+% da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
+% Brasília (CPAI), ao grupo de usuários
+% \emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
+% novos voluntários do grupo
+% \emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
+% \url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
+% contribuirão para a evolução do \abnTeX.
 
-\end{agradecimentos}
+% \end{agradecimentos}
 
 % ---
 % Epígrafe
 % ---
-\begin{epigrafe}
-    \vspace*{\fill}
-\begin{flushright}
-\textit{``Não vos amoldeis às estruturas deste mundo, \\
-mas transformai-vos pela renovação da mente, \\
-a fim de distinguir qual é a vontade de Deus: \\
-o que é bom, o que Lhe é agradável, o que é perfeito.\\
-(Bíblia Sagrada, Romanos 12, 2)}
-\end{flushright}
-\end{epigrafe}
-% ---
+% \begin{epigrafe}
+%     \vspace*{\fill}
+% \begin{flushright}
+% \textit{``Não vos amoldeis às estruturas deste mundo, \\
+% mas transformai-vos pela renovação da mente, \\
+% a fim de distinguir qual é a vontade de Deus: \\
+% o que é bom, o que Lhe é agradável, o que é perfeito.\\
+% (Bíblia Sagrada, Romanos 12, 2)}
+% \end{flushright}
+% \end{epigrafe}
+% % ---
 
 % ---
 % RESUMOS
 % ---
 
 % resumo em português
-\begin{resumo}
- Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
- objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto.
+% \begin{resumo}
+%  Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
+%  objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
+%  destes itens dependem do tipo de resumo (informativo ou indicativo) e do
+%  tratamento que cada item recebe no documento original. O resumo deve ser
+%  precedido da referência do documento, com exceção do resumo inserido no
+%  próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
+%  resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
+%  ponto e finalizadas também por ponto.
 
- \vspace{\onelineskip}
+%  \vspace{\onelineskip}
     
- \noindent
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
-\end{resumo}
+%  \noindent
+%  \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+% \end{resumo}
 
 % resumo em inglês
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   This is the english abstract.
+% \begin{resumo}[Abstract]
+%  \begin{otherlanguage*}{english}
+%    This is the english abstract.
 
-   \vspace{\onelineskip}
+%    \vspace{\onelineskip}
  
-   \noindent
-   \textbf{Key-words}: latex. abntex. text editoration.
- \end{otherlanguage*}
-\end{resumo}
+%    \noindent
+%    \textbf{Key-words}: latex. abntex. text editoration.
+%  \end{otherlanguage*}
+% \end{resumo}
 
 % ---
 % inserir lista de ilustrações
@@ -375,31 +378,31 @@ o que é bom, o que Lhe é agradável, o que é perfeito.\\
 % ---
 % inserir lista de tabelas
 % ---
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
 % ---
 
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-\begin{siglas}
-  \item[Fig.] Area of the $i^{th}$ component
-  \item[456] Isto é um número
-  \item[123] Isto é outro número
-  \item[lauro cesar] este é o meu nome
-\end{siglas}
+% \begin{siglas}
+%   \item[Fig.] Area of the $i^{th}$ component
+%   \item[456] Isto é um número
+%   \item[123] Isto é outro número
+%   \item[lauro cesar] este é o meu nome
+% \end{siglas}
 % ---
 
 % ---
 % inserir lista de símbolos
 % ---
-\begin{simbolos}
-  \item[$ \Gamma $] Letra grega Gama
-  \item[$ \Lambda $] Lambda
-  \item[$ \zeta $] Letra grega minúscula zeta
-  \item[$ \in $] Pertence
-\end{simbolos}
+% \begin{simbolos}
+%   \item[$ \Gamma $] Letra grega Gama
+%   \item[$ \Lambda $] Lambda
+%   \item[$ \zeta $] Letra grega minúscula zeta
+%   \item[$ \in $] Pertence
+% \end{simbolos}
 % ---
 
 % ---
@@ -419,30 +422,30 @@ o que é bom, o que Lhe é agradável, o que é perfeito.\\
 % Introdução
 % ----------------------------------------------------------
 \chapter{Introdução}
-Este trabalho acadêmico se refere ao desenvolvimento de um estudo e pesquisa, relativo aos paradigmas e conceitos da linguagem de programação Lua. Desta forma, serão atingidos temas como implementação de de sintaxe e semântica da linguagem.
+Este trabalho acadêmico se refere ao desenvolvimento de um estudo e pesquisa, relativo aos paradigmas e conceitos da linguagem de programação Lua. Desta forma, serão atingidos temas como implementação de sintaxe e semântica da linguagem.
 
 \section{Motivação}
 Conforme a proposta de projeto para o semestre, no que se refere ao estudo dos paradigmas de uma linguagem de programação, a escolha do grupo pela linguagem LUA, teve vários estímulos, como o fato da linguagem ter surgido em uma universidade brasileira, além de possuir uma ampla aplicação no ambiente de jogos e na indústria de TV digital.
 
-Em virtude do que foi mencionado, existiram muitas influênciasa para a escolha de LUA para esse projeto, existia o interesse em outras linguagens como Python, más devido as outras escolhas, optamos por LUA, que inclusive temos algumas experiências de trabalho.
+Em virtude do que foi mencionado, existiram muitas influências para a escolha de LUA para esse projeto, existia o interesse em outras linguagens como Python, más devido as outras escolhas, optamos por LUA, que inclusive temos algumas experiências de trabalho.
 
 \section{Objetivos}
 
 \subsection{Geral}
-Este trabalho tem como objetivo aplicar os conhecimentos obtidos na disciplina de paradigmas de linguagem de programação à linguagem LUA. Aprodundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem LUA.
+Este trabalho tem como objetivo aplicar os conhecimentos obtidos na disciplina de paradigmas de linguagem de programação à linguagem LUA. Aprofundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem LUA.
 
 \subsection{Específicos}
 Com base no objetivo geral derivam-se os seguintes objetivos específicos.
 \begin{itemize}
-\item Embasar historicamente a lingaguem.
+\item Embasar historicamente a linguagem.
 \item Explicar o funcionamento da sintaxe e semântica.
-\item Demonstrar os paradígmas envolvidos na linguagem.
+\item Demonstrar os paradigmas envolvidos na linguagem.
 \item Explicar e exemplificar o funcionamento de variáveis. Incluindo os tipos, sua vinculação, verificação de tipo e escopo.
 \item Apresentar as vantagens, desvantagens e as áreas a qual LUA melhor se aplica.
-\item Criação códigos para exemplificar os conceitos apresentados.
+\item Criar códigos para exemplificar os conceitos apresentados.
 \end{itemize}
 
-\section{Organização do Trabalho}
+% \section{Organização do Trabalho}
 
 
 % ----------------------------------------------------------
@@ -459,7 +462,7 @@ A linguagem Lua foi totalmente projetada, e implementada no Brasil, por Roberto 
 
 O estímulo inicial para a construção da linguagem veio de um projeto entre a PETROBRAS e a PUC-RIO, a fim de produzir um programa de interfaces gráficas para várias aplicações.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{imagens/imagem1.png}
 \caption{Programa Gráfico Mestre}
@@ -467,24 +470,24 @@ O estímulo inicial para a construção da linguagem veio de um projeto entre a 
 
 Logo surgiu o primeiro protótipo, DEL - Linguagem para Especificação de Diálogos, que trabalhava com lista de parâmetros e tipos e valores padrões. Com o passar do tempo após pesquisas e mudanças no projeto surgiu a linguagem `SOL' - Simple Object Language, sendo que era uma linguagem para descrição de objetos, inspirada no bibTex.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{imagens/imagem2.png}
 \caption{Trecho de código da linguagem SOL}
 \end{figure}
 
-No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portátil, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL.
+No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portável, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL.
 
-As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram uma grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
+As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram de grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
 
 Versões de Lua antes da versão 5.0 foram liberadas sob uma licença similar à licença BSD. A partir da versão 5.0, Lua foi licenciada sob a licença MIT.
 
-Hoje a linguagem é uma das mais utilizads do mundo estando entre as vinte mais utilizadas.
+Hoje a linguagem é uma das mais utilizadas do mundo estando entre as vinte mais utilizadas.
 
 \chapter{Aspectos léxicos e sintáticos de Lua}
 Esta capítulo descreve os principais aspectos léxicos, sintáticos e semânticos da linguagem Lua. sendo assim, serão descritas quais itens léxicos são válidos, como eles são combinados, e qual o significado da sua combinação.
 
-O estudo de linguagens de programação pode ser orientado à verificação dos aspectos semânticos e sintáticos de uma linguagem. Pois a sintaxe, é a forma das expressões e instruções, ou seja, como é feita a construção das mesmas. Não obstante, a semântica é o significado das expressões e instruções.
+O estudo de linguagens de programação pode ser orientado à verificação dos aspectos semânticos e sintáticos de uma linguagem. Pois a sintaxe é a forma das expressões e instruções, ou seja, como é feita a construção das mesmas. Não obstante, a semântica é o sforam ignificado das expressões e instruções.
 
 \section{Convenções Léxicas}
 Em Lua, os nomes podem ser qualquer cadeia de letras, dígitos, e sublinhados que não começam com um dígito, assim como em outras linguagens tradicionais, como C/C++. Os identificadores são usados para nomear variáveis e campos de tabelas.
@@ -543,12 +546,12 @@ while
 \section{Sintaxe de Lua}
 Aqui está a sintaxe completa de Lua na notação BNF estendida. (Ela não descreve as precedências dos operadores.)
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{imagens/sintaxe1.png}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{imagens/sintaxe2.png}
 \end{figure}
@@ -590,7 +593,7 @@ Sendo assim, a verificação de tipos em Lua é feita em tempo de execução pel
 \section{Escopo}
 O escopo de uma variável em uma linguagem é a faixa de instruções na qual a variável é visível. Uma variável é visível em uma instrução se puder ser referenciada nessa instrução, ou seja se uma instrução conseguer ter acesso a essa variável no bloco ou setor em que se encontra.
 
-Tendo em vista que existem dois tipos de escopo, sendo eles o escopo estático e o escopo dinâmico, Lua trabalha na modelagem de escopo dinâmico, logo baseia-se na sequência de chamadas de subprogramas. Dessa forma, o escopo pode ser determidado em tempo de execução.
+Tendo em vista que existem dois tipos de escopo, sendo eles o escopo estático e o escopo dinâmico, Lua trabalha na modelagem de escopo léxico, logo baseia-se na sequência de chamadas de subprogramas. Dessa forma, o escopo pode ser determidado em tempo de execução.
 
 Assume-se que toda variável é uma variável global a menos que ela seja explicitamente declarada como uma variável local. Variáveis locais possuem escopo léxico, por isso podem ser livremente acessadas por funções definidas dentro do seu escopo ou bloco.
 
@@ -600,9 +603,9 @@ Um bloco é uma lista de comandos; sintaticamente, um bloco é a mesma coisa que
 
 Blocos explícitos são úteis para controlar o escopo de declarações de variáveis, além de também usados às vezes para adicionar um comando return ou break no meio de outro bloco.
 
-Lua é uma linguagem com escopo léxico. O escopo das variáveis começa no primeiro comando depois da sua declaração e vai até o fim do bloco mais interno que inclui a declaração. Considere o seguinte exemplo:
+O escopo das variáveis começa no primeiro comando depois da sua declaração e vai até o fim do bloco mais interno que inclui a declaração. Considere o seguinte exemplo:
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{imagens/imagem3.png}
 \caption{Verificação de escopo em Lua}
@@ -627,6 +630,11 @@ Por causa das regras de escopo léxico, variáveis locais podem ser livremente a
 % \caption{Tabela com linhas e colunas}
 % \end{table}
 
+\chapter{Tipos de Dados em Lua}
+\chapter{Expressões e sentenças de atribuição}
+\chapter{Estruturas de controle}
+\chapter{Orientação à Tabelas}
+
 
 \bookmarksetup{startatroot}
 % ---
@@ -636,7 +644,7 @@ Por causa das regras de escopo léxico, variáveis locais podem ser livremente a
 % ---
 \chapter{Conclusão}
 \cite{Sebesta}
-\cite{Valentim:2013:Online}
+\cite{Lua_Org}
 
 
 % ----------------------------------------------------------
@@ -658,21 +666,21 @@ Por causa das regras de escopo léxico, variáveis locais podem ser livremente a
 % ---
 % Inicia os apêndices
 % ---
-\begin{apendicesenv}
+% \begin{apendicesenv}
 
-% ----------------------------------------------------------
-\chapter{apendice 1}
-% ----------------------------------------------------------
+% % ----------------------------------------------------------
+% \chapter{apendice 1}
+% % ----------------------------------------------------------
 
-paradgmas
+% paradgmas
 
-% ----------------------------------------------------------
-\chapter{apendice 2}
-% ----------------------------------------------------------
+% % ----------------------------------------------------------
+% \chapter{apendice 2}
+% % ----------------------------------------------------------
 
-paradgmas
+% paradgmas
 
-\end{apendicesenv}
+% \end{apendicesenv}
 % ---
 
 
@@ -683,19 +691,19 @@ paradgmas
 % ---
 % Inicia os anexos
 % ---
-\begin{anexosenv}
+% \begin{anexosenv}
 
 
-\chapter{anexo 1}
+% \chapter{anexo 1}
 
 
-\chapter{anexo 1}
+% \chapter{anexo 1}
 
 
-\chapter{anexo 1}
+% \chapter{anexo 1}
 
 
-\end{anexosenv}
+% \end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
