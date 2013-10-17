@@ -386,12 +386,18 @@ bookmarksdepth=4
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
-% \begin{siglas}
-%   \item[Fig.] Area of the $i^{th}$ component
-%   \item[456] Isto é um número
-%   \item[123] Isto é outro número
-%   \item[lauro cesar] este é o meu nome
-% \end{siglas}
+\begin{siglas}
+  \item[TV] Televisão 
+  \item[PUC-Rio] Pontifícia Universidade Católica do Rio de Janeiro
+  \item[Tecgraf] Instituto de Desenvolvimento de Software Técnico-Científico PUC-Rio
+  \item[LabLua] Laboratório de desenvolvimento da linguagem Lua
+  \item[PETROBRAS]  Petróleo Brasileiro S.A. 
+  \item[DEL] Linguagem para Especificação de Diálogos 
+  \item[SOL] Simple Object Language
+  \item[BSD] Berkeley Software Distribution 
+  \item[MIT] Massachusetts Institute of Technology
+  \item[BNF] Formalismo de Backus-Naur
+\end{siglas}
 % ---
 
 % ---
@@ -425,14 +431,14 @@ bookmarksdepth=4
 Este trabalho acadêmico se refere ao desenvolvimento de um estudo e pesquisa, relativo aos paradigmas e conceitos da linguagem de programação Lua. Desta forma, serão atingidos temas como implementação de sintaxe e semântica da linguagem.
 
 \section{Motivação}
-Conforme a proposta de projeto para o semestre, no que se refere ao estudo dos paradigmas de uma linguagem de programação, a escolha do grupo pela linguagem LUA, teve vários estímulos, como o fato da linguagem ter surgido em uma universidade brasileira, além de possuir uma ampla aplicação no ambiente de jogos e na indústria de TV digital.
+Conforme a proposta de projeto para o semestre, no que se refere ao estudo dos paradigmas de uma linguagem de programação, a escolha do grupo pela linguagem Lua, teve vários estímulos, como o fato da linguagem ter surgido em uma universidade brasileira, além de possuir uma ampla aplicação no ambiente de jogos e na indústria de TV digital.
 
-Em virtude do que foi mencionado, existiram muitas influências para a escolha de LUA para esse projeto, existia o interesse em outras linguagens como Python, más devido as outras escolhas, optamos por LUA, que inclusive temos algumas experiências de trabalho.
+Em virtude do que foi mencionado, existiram muitas influências para a escolha de Lua para esse projeto, existia o interesse em outras linguagens como Python, más devido as outras escolhas, optamos por Lua, que inclusive temos algumas experiências de trabalho.
 
 \section{Objetivos}
 
 \subsection{Geral}
-Este trabalho tem como objetivo aplicar os conhecimentos obtidos na disciplina de paradigmas de linguagem de programação à linguagem LUA. Aprofundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem LUA.
+Este trabalho tem como objetivo aplicar os conhecimentos obtidos na disciplina de paradigmas de linguagem de programação à linguagem Lua. Aprofundar e colocar em prática os conceitos aprendidos em sala de aula, documentando e exemplificando o funcionamento da linguagem Lua.
 
 \subsection{Específicos}
 Com base no objetivo geral derivam-se os seguintes objetivos específicos.
@@ -441,7 +447,7 @@ Com base no objetivo geral derivam-se os seguintes objetivos específicos.
 \item Explicar o funcionamento da sintaxe e semântica.
 \item Demonstrar os paradigmas envolvidos na linguagem.
 \item Explicar e exemplificar o funcionamento de variáveis. Incluindo os tipos, sua vinculação, verificação de tipo e escopo.
-\item Apresentar as vantagens, desvantagens e as áreas a qual LUA melhor se aplica.
+\item Apresentar as vantagens, desvantagens e as áreas a qual Lua melhor se aplica.
 \item Criar códigos para exemplificar os conceitos apresentados.
 \end{itemize}
 
@@ -458,7 +464,7 @@ Com base no objetivo geral derivam-se os seguintes objetivos específicos.
 % Capitulo de revisão de literatura
 % ---
 \chapter{Histórico}
-A linguagem Lua foi totalmente projetada, e implementada no Brasil, por Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes, que eram membros do Computer Graphics Technology Group na PUC-Rio, a Pontifícia Universidade Católica do Rio de Janeiro. Lua nasceu e cresceu no Tecgraf, Grupo de Tecnologia em Computação Gráfica da PUC-Rio. Atualmente, Lua é desenvolvida no laboratório Lablua. Tanto o Tecgraf quanto Lablua são laboratórios do Departamento de Informática da PUC-Rio.
+A linguagem Lua foi totalmente projetada, e implementada no Brasil, por Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes, que eram membros do Computer Graphics Technology Group na PUC-Rio, a Pontifícia Universidade Católica do Rio de Janeiro. Lua nasceu e cresceu no Tecgraf, Grupo de Tecnologia em Computação Gráfica da PUC-Rio. Atualmente, Lua é desenvolvida no laboratório LabLua. Tanto o Tecgraf quanto Lablua são laboratórios do Departamento de Informática da PUC-Rio.
 
 O estímulo inicial para a construção da linguagem veio de um projeto entre a PETROBRAS e a PUC-RIO, a fim de produzir um programa de interfaces gráficas para várias aplicações.
 
@@ -476,7 +482,7 @@ Logo surgiu o primeiro protótipo, DEL - Linguagem para Especificação de Diál
 \caption{Trecho de código da linguagem SOL}
 \end{figure}
 
-No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy (PGM), Luiz Henrique de Figueiredo (DEL) e Waldemar Celes (PGM) se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portável, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL.
+No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portável, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL.
 
 As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram de grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
 
@@ -556,7 +562,7 @@ O termo vinculação é uma associação ou uma referência, como, por exemplo, 
 
 Lua é uma linguagem dinamicamente tipada. Isto significa que variáveis não possuem tipos, porém somente valores possuem tipos. Não existem definições de tipos na linguagem, pois todos os valores carregam o seu próprio tipo de dados. Logo Lua utilizaça um método de decleração implícita de variáveis.
 
-A linguagem trabalha com vinculação dinâmica de tipos, logo o tipo não é especificado por uma instrução de declaração, como em C ou em JAVA. Em vez disso, a variável é vinculada a um tipo quando lhe é atribuida um valor em uma instrução de atribuição.
+A linguagem trabalha com vinculação dinâmica de tipos, logo o tipo não é especificado por uma instrução de declaração, como em C ou em Java. Em vez disso, a variável é vinculada a um tipo quando lhe é atribuida um valor em uma instrução de atribuição.
 
 Este modelo apresenta muitas diferenças com relação aos tipos estaticamente vinculados. A principal vantagem de vinculação dinâmica de variáveis a tipos é que ele tráz muita flexibilidade para a programação.
 
@@ -655,8 +661,39 @@ Estes operadores sempre possuem como resultado \textbf{true} ou \textbf{false}.
 A igualdade (==) primeiro compara o tipo dos operandos envolvidos na comparação. Logo, se os tipos são diferentes, então o resultado é \textbf{false}. Caso contrário, os valores dos operandos são comparados. Números e cadeias de caracteres são comparados de maneira usual. Objetos (valores do tipo table, userdata, thread e function) são comparados por referência, porque dois objetos são considerados iguais somente se eles são o mesmo objeto. Sendo assim, todas as vezes que um novo objeto é criado este novo objeto é diferente de qualquer outro objeto que existia anteriormente.
 
 \section{Operadores Lógicos}
-\section{Concatenação}
-\section{O Operador de Comprimento}
+Os operadores lógicos em Lua são \textbf{and}, \textbf{or} e \textbf{not}. Sendo que, todos os operadores lógicos consideram false e nil como falso e qualquer outro valor diferente como verdadeiro.
+
+O operador de negação \textbf{not} sempre retorna false ou true. Já o operador de conjunção \textbf{and} retorna seu primeiro argumento, se este valor é false ou nil, caso contrário o operador retorna o segundo argumento. Todavia, o operador \textbf{or} retorna seu primeiro argumento se o valor deste é diferente de nil e de false, caso contrário, retorna o seu segundo argumento. Tanto and como or usam avaliação de curto-circuito, isto é, o segundo operando é avaliado somente quando é necessário. Aqui estão alguns exemplos:
+
+10 or 20            --> 10
+
+10 or error()       --> 10
+
+nil or ``a''        --> ``a''
+
+nil and 10          --> nil
+
+false and error()   --> false
+
+false and nil       --> false
+
+false or nil        --> nil
+
+10 and 20           --> 20
+
+\section{Concatenação e Operador de Comprimento}
+O operador de concatenação de cadeias de caracteres em Lua é denotado por dois pontos (..) . Se ambos os operandos são cadeias de caracteres ou números, então eles são convertidos para cadeias de caracteres.
+
+Com base no que foi mencionado observe o seguinte exemplo:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{imagens/concatenacao.png}
+\caption{Concatenação de variáveis com cadeia de caracteres}
+\end{figure}
+
+O operador de comprimento é denotado pelo operador unário \#. O comprimento de uma cadeia de caracteres, por exemplo é o seu número de bytes. O comprimento de uma tabela t é definido como qualquer índice inteiro n tal que t[n] não é nil e t[n+1] é nil, além disso, se t[1] é nil, n pode ser zero. Para um array comum, com todos os valores diferentes de nil indo de 1 até n, o seu comprimento é exatamente n. Se o array possuir intervalos descontínuos, então \#t pode ser qualquer um dos índices que imediatamente precedem um valor nil.
+
 \section{Precedência}
 \section{Construtores de Tabelas}
 \section{Chamadas de Função}
@@ -722,19 +759,19 @@ A igualdade (==) primeiro compara o tipo dos operandos envolvidos na comparaçã
 % ---
 % Inicia os anexos
 % ---
-% \begin{anexosenv}
+\begin{anexosenv}
+
+
+% \chapter{anexo 1 - Programa Gráfico Mestre}
+
+
+% \chapter{anexo 2 - Trecho de código da linguagem SOL}
 
 
 % \chapter{anexo 1}
 
 
-% \chapter{anexo 1}
-
-
-% \chapter{anexo 1}
-
-
-% \end{anexosenv}
+\end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
