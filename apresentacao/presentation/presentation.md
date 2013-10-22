@@ -1,10 +1,27 @@
 Projeto Integrador VI
 ================
 ---
+Elaboração
+=============
 
-*Mário Sérgio*
+<div align = "center">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Mário Sérgio</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Pedro Martins</h1>
 
-*Pedro Martins*
+</div>
 
 ---
 
@@ -134,22 +151,76 @@ O resultado desse projeto foi dado o nome LUA, como um contraste da antiga SOL.
 
 ---
 
-Lua
-====
-	!lua
-		variavel = {}
-		local var = {"um","dois"}
-# Presenter Notes
-
-Hello from presenter notes
+Aspectos Léxicos e Sintáticos
+=============
 
 ---
-TESTES
+
+Construções léxicas
+=======
+
+<br>
+Os nomes da linguagem podem ser cadeias de letras, dígitos e sublinhados.
+
+Sendo que, os nomes não começam com dígitos
+
+Lua é uma linguagem que diferencia letras minúsculas de maiúsculas
+
+<br>
+<div>
+
+	!lua
+		 -- EXEMPLOS DE NOMES
+		 local tabela = {}
+		 
+		 tabela.variavel = "caracteres"
+		 
+		 tabela.VARIAVEL = "maiúsculas"
+		 
+		 tabela._variavel = "sublinhado"
+		 
+		 tabela.variavel20 = "dígitos"
+
+</div>
+
+
+
+
+---
+Sintaxe
 ========
 
-jfsdkfnlksdf
---------------
-- vvkdjf
-- lsfds
-	- kdjfsoa
+---
+BNF
+===
+
+![Lua](imagens/sintaxe1.png)
+
+---
+
+![Lua](imagens/sintaxe2.png)
+
+---
+Variáveis
+=========
+
+---
+Lua
+===
+	!lua
+		local x = 1 -- VARIÁVEL LOCAL
+		Y = 10 -- VARIÁVEL GLOBAL
+
+		tabela =  {} -- DECLARAÇÃO DE TABELA GLOBAL
+		tabela["primeiro_indice"] = 100 -- VARIÁVEL DE TABELA
+
+- Em Lua existem três tipos de variáveis, sendo elas as seguintes
+
+	- Variáveis locais
+	- Variáveis globais
+	- Variáveis de tabelas
+
+- A diferença entre variáveis locais e globais é o uso da palavra reservada ‘local’, antes do nome da variável
+
+
 ---
