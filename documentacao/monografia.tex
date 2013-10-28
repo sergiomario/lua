@@ -598,21 +598,6 @@ Note que, em uma declaração como local x = x, o novo x sendo declarado não es
 
 Por causa das regras de escopo léxico, variáveis locais podem ser livremente acessadas por funções definidas dentro do seu escopo. Uma variável local usada por uma função mais interna é chamada de upvalue ou variável local externa, dentro da função mais interna.
 
-% \begin{table}
-% \centering
-% \begin{tabular}{|c|c|c|}
-% \hline
-% \multicolumn{3}{|c|}{Tabela de Exemplo} \\
-% \hline
-% cell 1 & cell 2 & cell 3 \\
-% \hline
-% cell 4 & cell 5 & cell 6 \\
-% \hline
-% \end{tabular}
-% \label{completa}
-% \caption{Tabela com linhas e colunas}
-% \end{table}
-
 \chapter{Tipos de Dados em Lua}
 Os tipos de dados de uma linguagem de programação, são um dos fatores de maior importância para determinar a facilidade com que os programas podem executar problemas do mundo real. Pois para algumas aplicações certos tipos de dados conseguem mapear bem um tipo de problema. Portanto é imprescindível que uma linguagem suporte vários tipos de dados e estruturas.
 
@@ -695,9 +680,57 @@ Com base no que foi mencionado observe o seguinte exemplo:
 O operador de comprimento é denotado pelo operador unário \#. O comprimento de uma cadeia de caracteres, por exemplo é o seu número de bytes. O comprimento de uma tabela t é definido como qualquer índice inteiro n tal que t[n] não é nil e t[n+1] é nil, além disso, se t[1] é nil, n pode ser zero. Para um array comum, com todos os valores diferentes de nil indo de 1 até n, o seu comprimento é exatamente n. Se o array possuir intervalos descontínuos, então \#t pode ser qualquer um dos índices que imediatamente precedem um valor nil.
 
 \section{Precedência}
-\section{Construtores de Tabelas}
-\section{Chamadas de Função}
-\section{Definições de Funções}
+A precedência de operadores em Lua segue a tabela abaixo, da menor prioridade para a maior:
+
+ or
+     and
+     <     >     <=    >=    ~=    ==
+     ..
+     +     -
+     *     /     %
+     not   #     - (unary)
+     ^
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Tabela de Exemplo} \\
+\hline
+cell 1 & cell 2 & cell 3 \\
+\hline
+cell 4 & cell 5 & cell 6 \\
+\hline
+\end{tabular}
+\label{completa}
+\caption{Tabela com linhas e colunas}
+\end{table}
+
+Como padrão, não existe a necessidade de usar parênteses para mudar as precedências de uma expressão. Os operadores de concatenação (`..') e de exponenciação (`^') são associativos à direita. Todos os demais operadores binários são associativos à esquerda.
+
+\section{Definições e Chamadas de Função}
+A sintaxe para a definição de uma função é
+
+  funcao ::= function corpodafuncao
+  funcao ::= `(´ [listapar] `)´ bloco end
+
+Podemos verificar em Lua que o comando \textbf{function f () corpo end} é traduzido para \textbf{f = function () corpo end}
+
+Uma definição de função é uma expressão executável, cujo valor tem tipo function. Quando Lua pré-compila um trecho, todos os corpos das funções do trecho são pré-compilados também. Então, sempre que Lua executa a definição de uma função, a função é instanciada (ou fechada).
+
+Uma chamada de função em Lua tem a seguinte sintaxe:
+
+  chamadadefuncao ::= expprefixo args
+
+Em uma chamada de função, primeiro \textbf{expprefixo} e \textbf{args} são avaliados. Se o valor de \textbf{expprefixo} possui tipo function, então esta função é chamada com os argumentos fornecidos, conforme o exemplo abaixo:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{imagens/function.png}
+\caption{Chamada de Função em Lua}
+\end{figure}
+
+Uma chamada de funcao da forma return é denominada de chamada final. Portanto, Lua implementa chamadas finais próprias em uma chamada final, logo a função chamada reusa a entrada na pilha da função que a chamou. Sendo assim, não há limite no número de chamadas finais aninhadas que um programa pode executar. Note que uma chamada final somente acontece com uma sintaxe particular, onde o return possui uma única chamada de função como argumento.
 
 \chapter{Sentenças de Atribuição}
 \chapter{Estruturas de Controle}
