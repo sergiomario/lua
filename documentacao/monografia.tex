@@ -173,71 +173,38 @@ bookmarksdepth=4
 % com o documento, salve-o como PDF no diretório do seu projeto e substitua todo
 % o conteúdo de implementação deste arquivo pelo comando abaixo:
 %
-% \begin{fichacatalografica}
-% \includepdf{fig_ficha_catalografica.pdf}
-% \end{fichacatalografica}
-% \begin{fichacatalografica}
-% \vspace*{\fill}	% Posição vertical
-% \hrule	% Linha horizontal
-% \begin{center}	% Minipage Centralizado
-% \begin{minipage}[c]{12.5cm}	% Largura
+\begin{fichacatalografica}
+\vspace*{\fill}	% Posição vertical
+\hrule	% Linha horizontal
+\begin{center}	% Minipage Centralizado
+\begin{minipage}[c]{12.5cm}	% Largura
 
-% \imprimirautor
+\imprimirautor
 
-% \hspace{0.5cm} \imprimirtitulo / \imprimirautor. --
-% \imprimirlocal, \imprimirdata-
+\hspace{0.5cm} \imprimirtitulo. --
+\imprimirlocal, \imprimirdata-
 
-% \hspace{0.5cm} \pageref{LastPage} p. : il. (algumas color.) ; 30 cm.\\
+\hspace{0.5cm} \pageref{LastPage} p.\\
 
-% \hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
+\hspace{0.5cm} \imprimirorientadorRotulo~\imprimirorientador\\
 
-% \hspace{0.5cm}
-% \parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
-% \imprimirdata.}\\
+\hspace{0.5cm}
+\parbox[t]{\textwidth}{\imprimirtipotrabalho~--~\imprimirinstituicao,
+\imprimirdata.}\\
 
-% \hspace{0.5cm}
-% 1. Palavra-chave1.
-% 2. Palavra-chave2.
-% I. Orientador.
-% II. Universidade xxx.
-% III. Faculdade de xxx.
-% IV. Título\\
+\hspace{0.5cm}
+1. Lua.
+2. Paradigmas.
+I. João Paulo.
+II. IESB.
+III. Ciência da Computação.
 
-% \hspace{8.75cm} CDU 02:141:005.7\\
+\hspace{8.75cm} CDU 02:141:005.7\\
 
-% \end{minipage}
-% \end{center}
-% \hrule
-% \end{fichacatalografica}
-% ---
-
-% ---
-% Inserir errata
-% ---
-% \begin{errata}
-% Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
-
-% \vspace{\onelineskip}
-
-% FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com
-% reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma
-% rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em
-% cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e
-% Zootecnia, Universidade de São Paulo, São Paulo, 2011.
-
-% \begin{table}[htb]
-% \center
-% \footnotesize
-% \begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
-%   \hline
-%    \textbf{Folha} & \textbf{Linha} & \textbf{Onde se lê} & \textbf{Leia-se} \\
-%     \hline
-%     1 & 10 & auto-conclavo & autoconclavo\\
-%    \hline
-% \end{tabular}
-% \end{table}
-
-% \end{errata}
+\end{minipage}
+\end{center}
+\hrule
+\end{fichacatalografica}
 % ---
 
 % ---
@@ -249,39 +216,37 @@ bookmarksdepth=4
 % do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
 % imagem da página assinada pela banca com o comando abaixo:
 %
-% \includepdf{folhadeaprovacao_final.pdf}
-%
-% \begin{folhadeaprovacao}
+\begin{folhadeaprovacao}
 
-%   \begin{center}
-%     {\ABNTEXchapterfont\large\imprimirautor}
+  \begin{center}
+    {\ABNTEXchapterfont\large\imprimirautor}
 
-%     \vspace*{\fill}\vspace*{\fill}
-%     {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
-%     \vspace*{\fill}
+    \vspace*{\fill}\vspace*{\fill}
+    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}
+    \vspace*{\fill}
     
-%     \hspace{.45\textwidth}
-%     \begin{minipage}{.5\textwidth}
-%         \imprimirpreambulo
-%     \end{minipage}%
-%     \vspace*{\fill}
-%    \end{center}
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+        \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+   \end{center}
     
-%    Trabalho aprovado. \imprimirlocal, \imprimirdata:
+   Trabalho aprovado. \imprimirlocal, \imprimirdata:
 
-%    \assinatura{\textbf{\imprimirorientador} \\ Orientador}
-%    \assinatura{\textbf{Professor} \\ Convidado 1}
-%    \assinatura{\textbf{Professor} \\ Convidado 2}
+   \assinatura{\textbf{\imprimirorientador} \\ Orientador}
+   \assinatura{\textbf{Professor} \\ Convidado 1}
+   \assinatura{\textbf{Professor} \\ Convidado 2}
       
-%    \begin{center}
-%     \vspace*{0.5cm}
-%     {\large\imprimirlocal}
-%     \par
-%     {\large\imprimirdata}
-%     \vspace*{1cm}
-%   \end{center}
+   \begin{center}
+    \vspace*{0.5cm}
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
   
-% \end{folhadeaprovacao}
+\end{folhadeaprovacao}
 % ---
 
 % ---
@@ -322,16 +287,16 @@ bookmarksdepth=4
 % ---
 % Epígrafe
 % ---
-% \begin{epigrafe}
-%     \vspace*{\fill}
-% \begin{flushright}
-% \textit{``Não vos amoldeis às estruturas deste mundo, \\
-% mas transformai-vos pela renovação da mente, \\
-% a fim de distinguir qual é a vontade de Deus: \\
-% o que é bom, o que Lhe é agradável, o que é perfeito.\\
-% (Bíblia Sagrada, Romanos 12, 2)}
-% \end{flushright}
-% \end{epigrafe}
+\begin{epigrafe}
+    \vspace*{\fill}
+\begin{flushright}
+\textit{``Tudo tem o seu tempo determinado, \\
+e há tempo para todo o propósito debaixo do céu. \\
+Há tempo de nascer, e tempo de morrer; \\
+tempo de plantar, e tempo de arrancar o que se plantou\\
+(Bíblia Sagrada, Eclesiastes 3, 1 e 2)}
+\end{flushright}
+\end{epigrafe}
 % % ---
 
 % ---
@@ -339,33 +304,33 @@ bookmarksdepth=4
 % ---
 
 % resumo em português
-% \begin{resumo}
-%  Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
-%  objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
-%  destes itens dependem do tipo de resumo (informativo ou indicativo) e do
-%  tratamento que cada item recebe no documento original. O resumo deve ser
-%  precedido da referência do documento, com exceção do resumo inserido no
-%  próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
-%  resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
-%  ponto e finalizadas também por ponto.
+\begin{resumo}
+ Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
+ objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
+ destes itens dependem do tipo de resumo (informativo ou indicativo) e do
+ tratamento que cada item recebe no documento original. O resumo deve ser
+ precedido da referência do documento, com exceção do resumo inserido no
+ próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
+ resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
+ ponto e finalizadas também por ponto.
 
-%  \vspace{\onelineskip}
+ \vspace{\onelineskip}
     
-%  \noindent
-%  \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
-% \end{resumo}
+ \noindent
+ \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
 
 % resumo em inglês
-% \begin{resumo}[Abstract]
-%  \begin{otherlanguage*}{english}
-%    This is the english abstract.
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+   This is the english abstract.
 
-%    \vspace{\onelineskip}
+   \vspace{\onelineskip}
  
-%    \noindent
-%    \textbf{Key-words}: latex. abntex. text editoration.
-%  \end{otherlanguage*}
-% \end{resumo}
+   \noindent
+   \textbf{Key-words}: latex. abntex. text editoration.
+ \end{otherlanguage*}
+\end{resumo}
 
 % ---
 % inserir lista de ilustrações
@@ -378,9 +343,9 @@ bookmarksdepth=4
 % ---
 % inserir lista de tabelas
 % ---
-% \pdfbookmark[0]{\listtablename}{lot}
-% \listoftables*
-% \cleardoublepage
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
 % ---
 
 % ---
@@ -680,39 +645,40 @@ Com base no que foi mencionado observe o seguinte exemplo:
 O operador de comprimento é denotado pelo operador unário \#. O comprimento de uma cadeia de caracteres, por exemplo é o seu número de bytes. O comprimento de uma tabela t é definido como qualquer índice inteiro n tal que t[n] não é nil e t[n+1] é nil, além disso, se t[1] é nil, n pode ser zero. Para um array comum, com todos os valores diferentes de nil indo de 1 até n, o seu comprimento é exatamente n. Se o array possuir intervalos descontínuos, então \#t pode ser qualquer um dos índices que imediatamente precedem um valor nil.
 
 \section{Precedência}
-A precedência de operadores em Lua segue a tabela abaixo, da menor prioridade para a maior:
-
- or
-     and
-     <     >     <=    >=    ~=    ==
-     ..
-     +     -
-     *     /     %
-     not   #     - (unary)
-     ^
-
+A precedência de operadores em Lua segue a \textit{Tabela 1} na página seguinte, na ordem de menor prioridade para a maior:
 \begin{table}
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{c|c|c|c|c|c}
 \hline
-\multicolumn{3}{|c|}{Tabela de Exemplo} \\
+\multicolumn{6}{|c|}{\textbf{Tabela de Precedência}} \\
 \hline
-cell 1 & cell 2 & cell 3 \\
+\multicolumn{6}{|c|}{or} \\
 \hline
-cell 4 & cell 5 & cell 6 \\
+\multicolumn{6}{|c|}{and} \\
 \hline
+\multicolumn{6}{|c|}{< \textit{ou} > \textit{ou} <= \textit{ou} >= \textit{ou} \~= \textit{ou} ==} \\
+\hline
+\multicolumn{6}{|c|}{..} \\
+\hline
+\multicolumn{6}{|c|}{+ \textit{ou} -} \\
+\hline
+\multicolumn{6}{|c|}{* \textit{ou} / \textit{ou} \%} \\
+\hline
+\multicolumn{6}{|c|}{not \textit{ou} \# \textit{ou} -(unary)} \\
+\hline
+\multicolumn{6}{|c|}{\^.} \\
 \end{tabular}
 \label{completa}
-\caption{Tabela com linhas e colunas}
+\caption{Tabela de precedência em Lua}
 \end{table}
 
-Como padrão, não existe a necessidade de usar parênteses para mudar as precedências de uma expressão. Os operadores de concatenação (`..') e de exponenciação (`^') são associativos à direita. Todos os demais operadores binários são associativos à esquerda.
+Como padrão, não existe a necessidade de usar parênteses para mudar as precedências de uma expressão. Os operadores de concatenação e de exponenciação são associativos à direita. Todos os demais operadores binários são associativos à esquerda.
 
 \section{Definições e Chamadas de Função}
 A sintaxe para a definição de uma função é
 
   funcao ::= function corpodafuncao
-  funcao ::= `(´ [listapar] `)´ bloco end
+  funcao ::= ( [listapar] ) bloco end
 
 Podemos verificar em Lua que o comando \textbf{function f () corpo end} é traduzido para \textbf{f = function () corpo end}
 
