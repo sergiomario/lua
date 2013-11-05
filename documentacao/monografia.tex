@@ -265,22 +265,10 @@ III. Ciência da Computação.
 % Agradecimentos
 % ---
 \begin{agradecimentos}
-Os agradecimentos principais são direcionados à Gerald Weber, Miguel Frasson,
-Leslie H. Watter, Bruno Parente Lima, Flávio de Vasconcellos Corrêa, Otavio Real
-Salvador, Renato Machnievscz\footnote{Os nomes dos integrantes do primeiro
-projeto abn\TeX\ foram extraídos de
-\url{http://codigolivre.org.br/projects/abntex/}} e todos aqueles que
-contribuíram para que a produção de trabalhos acadêmicos conforme
-as normas ABNT com \LaTeX\ fosse possível.
+Os agradecimentos principais são direcionados à Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes, sendo eles os criadores da linguagem Lua, e todos aqueles que contribuíram para a produção deste trabalhos acadêmico conforme
+as normas estabelecidas.
 
-Agradecimentos especiais são direcionados ao Centro de Pesquisa em Arquitetura
-da Informação\footnote{\url{http://www.cpai.unb.br/}} da Universidade de
-Brasília (CPAI), ao grupo de usuários
-\emph{latex-br}\footnote{\url{http://groups.google.com/group/latex-br}} e aos
-novos voluntários do grupo
-\emph{\abnTeX}\footnote{\url{http://groups.google.com/group/abntex2} e
-\url{http://abntex2.googlecode.com/}}~que contribuíram e que ainda
-contribuirão para a evolução do \abnTeX.
+Agradecimentos especiais são direcionados ao Centro Universitário de Ensino Superior de Brasília por fornecer toda a infraestrutura e base acadêmica para a elaboração de projetos como este.
 
 \end{agradecimentos}
 
@@ -305,11 +293,11 @@ tempo de plantar, e tempo de arrancar o que se plantou\\
 
 % resumo em português
 \begin{resumo}
- Este projeto se refere à estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. 
+Este projeto se refere à estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. 
 
- Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua.
+Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua.
 
- Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
+Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
 
  \noindent
  \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
@@ -746,6 +734,41 @@ Conforme visto acima o primeiro iterador utiliza a palavra reservada \textbf{ipa
 É necessário lembrar que todas as estruturas de controle são adecuadas às regras de escopo das variáveis e regras de visibilidade. 
 
 \chapter{Orientação à Tabelas}
+Lua é uma linguagem multiparadigma, que contém fortemente implementados os paradigmas de programação imperativa e programação procedural, baseada no conceito de chamadas de procedimentos. Além desses dois paradigmas, Lua também tráz características de abstração de dados, que por sua vez é muito utilizado na orientação a objetos, este recurso de abstração concedido por meio das metatabelas. 
+
+Conforme já foi definido no capítulo de tipos de dados, o tipo \textbf{table} em Lua utiliza arrays associativos. Tabelas podem ser heterogêneas, ou seja, elas podem conter valores de todos os tipos, excetuado pelo valor nil. Sendo que, as tabelas são o único mecanismo de estruturação de dados em Lua, todavia, elas podem ser usadas para representar arrays comuns, tabelas de símbolos, conjuntos, registros, grafos, árvores, e outros.
+
+\section{Abstração de dados}
+Como o tipo \textbf{table} é o único recurso de estrutura de dados em Lua, toda a abstração de dados da linguagem utiliza os recursos da tabela. Por esse motivo é possível implementar um método de desenvolvimento em Lua orientado a objetos ou a eventos.
+
+No exemplo abaixo podemos verificar a aplicação de tabelas para criar classes e objetos em Lua.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{imagens/OO.png}
+\caption{Exemplo de iteradores em tabelas Lua}
+\end{figure}
+
+\section{Manipulação de Tabelas}
+Em lua há uma biblioteca que provê funções genéricas para manipulação de tabelas, sendo que, ela provê todas as suas funções na tabela \textbf{table}.
+
+A maioria das funções na biblioteca de tabelas assume que a tabela representa um array ou uma lista. Dessa forma são feitas as seguintes funções:
+
+\begin{itemize}
+
+\item table.concat - Concatena elementos dado um array onde todos os elementos são cadeias ou números.
+
+\item table.insert - Insere um elemento na tabela, na posição em que o programador desejar, deslocando os outros elementos para abrir espaço, se necessário.
+
+\item table.maxn - Retorna o maior índice numérico positivo da tabela fornecida ou zero se a tabela não possui índices numéricos positivos.
+
+\item table.remove - Remove de tabela o elemento na posição desejada pelo programador, deslocando os outros elementos para preencher o espaço, se necessário. Retorna o valor do elemento removido.
+
+table.sort - Ordena os elementos da tabela em uma dada ordem, de table[1] até table[n], onde n é o comprimento da tabela. 
+O algoritmo de ordenação não é estável, isto é, elementos considerados iguais pela ordem fornecida podem ter suas posições relativas trocadas pela ordenação.
+\end{itemize}
+
+\section{Metatabelas}
 
 
 \bookmarksetup{startatroot}
