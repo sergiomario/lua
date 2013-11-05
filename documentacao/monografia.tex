@@ -694,7 +694,57 @@ Em uma chamada de função, primeiro \textbf{expprefixo} e \textbf{args} são av
 Uma chamada de funcao da forma return é denominada de chamada final. Portanto, Lua implementa chamadas finais próprias em uma chamada final, logo a função chamada reusa a entrada na pilha da função que a chamou. Sendo assim, não há limite no número de chamadas finais aninhadas que um programa pode executar. Note que uma chamada final somente acontece com uma sintaxe particular, onde o return possui uma única chamada de função como argumento.
 
 \chapter{Sentenças de Atribuição}
+A instrução de atribuição é uma das instruções fundamentais das linguagens imperativas, pois oferece um mecanismo por meio do qual o usuário pode modificar dinâmicamente as vinculações e os valores das variáveis.
+
+Lua permite atribuições simples e mútiplas. Em virtude disto, a sintaxe para a atribuição define uma lista de variáveis no lado esquerdo e uma lista de expressões do lado direito. Sendo que os elementos em ambos os lados são separados por vírgula. Logo:
+\textbf{Comando de Atribuição -> Lista de Variáveis = Lista de Expressões}
+
+Contudo, antes da atribuição de fato ser realizada, a lista de valores a ajustada de acordo com o comprimento da lista de variáveis. Sendo assim, se houver mais valores do que variáveis esses valores são descartados, caso contrário, se houver menos valores a lista é completada com valores nulos (nil).
+
+É importante lembrar que Lua não permite atribuições unárias como C, C++ ou Java que incluem dois operadores aritméticos unários, sendo eles ++ para incremento e -- para decremento. Para isso a linguagem utiliza outro recurso de atribuição que é a atribuições de expressões, como por exemplo, \textit{var = var + 1} ou \textit{var = var -1}. Além disso é permitido atribuições de mútiplas expressões a múltiplas variáveis.
+
+A semântica de atribuições para variáveis globais e campos de tabelas pode ser mudada através do uso de metatabelas. No anexo xxx são apresentados alguns exemplos de atribuições em Lua.
+
+
 \chapter{Estruturas de Controle}
+A definição de estrutura de controle é conceituada da seguinte forma, uma instrução de controle e sua coleção de comandos cuja a execução é controlada pela própria estrutura.
+
+Em Lua as estruturas de controle \textbf{if}, \textbf{while} e \textbf{repeat} possuem o significado usual e a sintaxe familiar, conforme abaixo:
+
+\begin{itemize}
+\item comando ::= \textbf{while} exp \textbf{do} bloco \textbf{end}
+\item comando ::= \textbf{repeat} bloco \textbf{until} exp
+\item comando ::= \textbf{if} exp \textbf{then} bloco {\textbf{elseif} exp \textbf{then} bloco} [\textbf{else} bloco] \textbf{end}
+\end{itemize}
+
+A expressão da condição de uma estrutura de controle pode retornar qualquer valor. Tanto \textbf{false} como \textbf{nil} são considerados valores falso. Logo, todos os valores diferentes de \textbf{nil} e \textbf{false} são considerados verdadeiros (em particular, o número 0 e a cadeia de caracteres vazia também são considerados valores verdadeiros).
+
+No laço repeat–until, o bloco mais interno não termina na palavra-chave \textbf{until}, mas somente depois da condição. Desta forma, a condição pode referenciar variáveis locais declaradas dentro do bloco do laço.
+
+O comando \textbf{return} é usado para retornar valores de uma função ou de um trecho de função. Sendo que, funções e trechos podem retornar mais de um valor, de modo que a sintaxe para o comando return é:
+
+\begin{itemize}
+\item comando ::= return [listaexp]
+\end{itemize}
+
+O comando \textbf{break} é usado para terminar a execução de um laço \textbf{while}, \textbf{repeat} ou \textbf{for}, pulando para o próximo comando depois do laço. Um break termina a execução do laço mais interno.
+
+Os comandos \textbf{return} e \textbf{break} somente podem ser escritos como o último comando de um bloco. Se é realmente necessário ter um \textbf{return} ou \textbf{break} no meio de um bloco, então um bloco interno explícito pode ser usado, como nas expressões idiomáticas do return end e do break end, pois agora tanto o return como o break são os últimos comandos em seus respectivos blocos.
+
+Lua possui duas variações do comando \textbf{for}, sendo uma numérica e outra genérica. O laço for numérico repete um bloco de código enquanto uma variável de controle varia de acordo com uma progressão aritmética. Já o laço for genérico funciona utilizando funções, chamadas de iteradoras. A cada iteração, a função iteradora é chamada para produzir um novo valor, parando quando este novo valor é nil.
+
+Além disso o \textbf{for} em Lua pode iterar específicamente sobre os elementos de uma tabela Lua de duas formas distintas, utilizando o modelo genérico já apresentado. Conforme abaixo:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{imagens/for.png}
+\caption{Exemplo de iteradores em tabelas Lua}
+\end{figure}
+
+Conforme visto acima o primeiro iterador utiliza a palavra reservada \textbf{ipairs}, isso significa que o \textbf{for} irá iterar obedecendo a ordenação e sequenciamento dos índices. Por isso, no log de execução do primeiro iterador não é verificada a vazualização dos dois últimos valores da tabela, já que os mesmo possuem índices no formado de cadeia de caracteres. Em contrapartida, o segundo exemplo do for itera sob todos o índices da tabela independentemente do sequenciamento.
+
+É necessário lembrar que todas as estruturas de controle são adecuadas às regras de escopo das variáveis e regras de visibilidade. 
+
 \chapter{Orientação à Tabelas}
 
 
