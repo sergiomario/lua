@@ -224,3 +224,55 @@ Lua
 
 
 ---
+Vinculação
+==========
+
+---
+Lua
+===
+- Lua é uma linguagem dinamicamente tipada.
+- A linguagem trabalha com vinculação dinâmica de tipos;
+
+<br>
+
+- Existem oito tipos de dados b ́asicos em Lua:
+	- nil - boolean - number - string- thread;
+	- function - userdata - table.
+
+<br>
+
+- O tempo de vida das variáveis é definido pelo fato de ela se global ou local;
+
+---
+Verificação de Tipo
+============
+
+---
+Lua
+===
+- A verificação de tipos em Lua é feita em tempo de execução pelo interpretador Lua;
+
+<br>
+
+![Lua](imagens/verificacao_tipo.png)
+
+<br>
+
+![Lua](imagens/verificacao_tipo2.png)
+
+
+---
+Escopo
+======
+
+---
+Lua
+===
+- Lua é uma linguagem com escopo léxico; 
+- Baseia-se na sequência de chamadas de subprogramas;
+- O escopo pode ser determinado em tempo de execução;
+- Variáveis locais podem ser livremente acessadas por funções definidas dentro do seu escopo ou bloco;
+
+![Lua](imagens/imagem3.png)
+
+---

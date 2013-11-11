@@ -152,6 +152,10 @@ bookmarksdepth=4
 % ---
 % Capa
 % ---
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{imagens/capa.png}
+\end{figure}
 \imprimircapa
 % ---
 
@@ -399,7 +403,7 @@ Com base no objetivo geral derivam-se os seguintes objetivos específicos.
 \item Criar códigos para exemplificar os conceitos apresentados.
 \end{itemize}
 
-% \section{Organização do Trabalho}
+\section{Organização do Trabalho}
 
 
 % ----------------------------------------------------------
@@ -769,10 +773,40 @@ O algoritmo de ordenação não é estável, isto é, elementos considerados igu
 \end{itemize}
 
 \section{Metatabelas}
+Todos os valores em Lua pode possuir uma metatabela, que na verdade é uma tabela comum de Lua que define alguns comportamentos com relação a certas operações iniciais. Com isso, é possível alterar diversos aspectos do comportamento de operações, especificando campos específicos na metatabela do valor. Por exemplo, quando um valor não numérico é um operando de uma adição, Lua verifica se existe uma função associada com o campo ``\_\_add'' na metatabela. Logo, se a função existir, o interpretador Lua chama esta função para realizar a adição.
+
+Chamamos as chaves de uma metatabela de eventos e os seus valores de metamétodos. No exemplo anterior, o evento é a operação ``add'' e o metamétodo é a função que realiza a adição. Sendo assim, é possível obter a metatabela de qualquer valor usando a função \textbf{getmetatable}, e também pode ser alterada a metatabela através da função \textbf{setmetatable}. Entretanto metatabela não pode ser modificada para outros tipos de Lua (a menos que você use a biblioteca de depuração), neste caso obrigatoriamente deve ser usada a API C.
+
+Tabelas e objetos do tipo \textbf{userdata} possuem metatabelas individuais. No entanto, valores de todos os outros tipos compartilham uma única metatabela por tipos, ou seja, há somente uma metatabela para todos os números, uma para todas as cadeias de caracteres e etc.
+
+Uma metatabela controla como um objeto se comporta em operações aritméticas, comparações com relação à ordem, concatenação, operação de comprimento e indexação. Uma metatabela também pode definir uma função a ser chamada quando um objeto userdata é coletado pelo coletor de lixo. Para cada uma destas operações Lua associa uma chave específica chamada um evento.
+
+\chapter{Facilidades e Bibliotecas Padrões}
+Este capítulo tratará de alguns aspectos específicos de padrões no projeto da linguagem Lua, bom como suas características homogêneas.
+
+\section{Tratamento de Erros}
+Como Lua é uma linguagem de tipo embarcada de extensão, todas as suas ações de começam a partir de um código C, no programa hospedeiro que chama uma função da biblioteca Lua. Então, sempre que um erro ocorre durante a compilação ou execução, o controle retorna para o código C, que pode tomar as medidas apropriadas.
+
+Um código Lua pode explicitamente gerar um erro através da chamada à função \textbf{error}. Caso, necessite capturar erros em Lua, pode ser usada a função \textbf{pcall}.
+
+\section{Ambientes}
+Além de metatabelas, objetos do tipo \textbf{thread}, \textbf{function} e \textbf{userdata} possuem outra tabela associada a eles, chamada de ambiente. Sendo assim, como metatabelas, ambientes são tabelas normais, vários objetos podem compartilhar o mesmo ambiente.
+
+Objetos do tipo \textbf{thread} são criados compartilhando o ambiente da thread que os criou. Objetos do tipo \textbf{userdata} e funções C são criados compartilhando o ambiente da função C que os criou. As funções Lua não aninhadas (criadas por loadfile, loadstring ou load) são criadas compartilhando o ambiente da thread que as criou. E funções Lua aninhadas são criadas compartilhando o ambiente da função Lua que as criou.
+
+O ambiente associado a uma função em C pode ser diretamente acessado pelo código fonte C. Isso é usado como o ambiente padrão para outras funções C e objetos \textbf{userdata} criados pela função.
+
+É possível mudar o ambiente de uma função Lua ou do fluxo de execução que está sendo executado atualmente chamando \textbf{setfenv}. Além disso, é possível obter o ambiente de uma função Lua ou do fluxo de execução sendo executado atualmente chamando \textbf{getfenv}.
+
+\section{Coleta de Lixo}
+Lua funciona com um gerenciamento automático da memória. Isto significa que não é necessário se preocupar com a alocação de memória para novos objetos, nem com a liberação de memória quando os objetos não são mais necessários. Pois, a linguagem Lua gerencia a memória automaticamente executando um coletor de lixo de tempos em tempos para coletar todos os objetos mortos. Toda memória usada por Lua está sujeita ao gerenciamento automático de memória: tabelas, userdata, funções, fluxos de execução, cadeias de caracteres e etc.
+
+Lua implementa um coletor de lixo marca-e-limpa (mark-and-sweep) incremental. Sendo que, o coletor usa dois números para controlar o seu ciclo de coleta de lixo, a pausa do coletor de lixo e o multiplicador de passo do coletor de lixo.
+
+A pausa do coletor controla quanto tempo irá esperar antes de iniciar um novo ciclo. O multiplicador de passo controla a velocidade relativa do coletor em relação à alocação de memória. É possível mudar estes números através de chamadas às funções \textbf{lua\_gc} em C ou \textbf{collectgarbage} em Lua. Com estas funções você também pode controlar o coletor diretamente.
 
 
 \bookmarksetup{startatroot}
-% ---
 
 % ---
 % Conclusão
