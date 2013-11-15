@@ -297,25 +297,21 @@ tempo de plantar, e tempo de arrancar o que se plantou\\
 
 % resumo em português
 \begin{resumo}
-Este projeto se refere à estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. 
-
-Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua.
-
-Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
+Este projeto se refere à estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua. Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
 
  \noindent
- \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chaves}: paradigmas. linguagem de programação. Lua. projeto.
 \end{resumo}
 
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-   This is the english abstract.
+   This project refers to studies and research relating to the paradigms and concepts of the programming language Lua. To this, the official documentation used as the basis of language contained in \cite{Lua_Org}, and concepts related to projects of programming language book \cite{Sebesta}. As tools for the elaboration of the work was used for the latex documentation and the sublime to Lua code execution. Based on what was mentioned, the project wishes to address all concepts and paradigms of programming language Lua. 
 
    \vspace{\onelineskip}
  
    \noindent
-   \textbf{Key-words}: latex. abntex. text editoration.
+   \textbf{Key-words}: paradigms. programming. Lua.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -404,11 +400,31 @@ Com base no objetivo geral derivam-se os seguintes objetivos específicos.
 \end{itemize}
 
 \section{Organização do Trabalho}
+Este trabalho está organizado em 10 capítulos, da seguinte forma:
 
+\begin{itemize}
 
-% ----------------------------------------------------------
-% Capitulo com exemplos de comandos inseridos de arquivo externo
-% ----------------------------------------------------------
+\item Capítulo 1 - No capítulo um são apresentados os objetivos e motivações para a elaboração do projeto, além de apresentar uma pequena introdução sobre o que será abordado.
+
+\item Capítulo 2 - O capítulo dois trás informações sobre a história da linguagem Lua.
+
+\item Capítulo 3 - O capítulo três apresenta os aspectos e características léxicas e sintáticas da linguagem.
+
+\item Capítulo 4 - No capítulo quatro é explicado como Lua aplica a sua semântica para o tratamento de variáveis, como nomes, vinculação, verificação de tipos, escopo e tempo de vida.
+
+\item Capítulo 5 - O capítulo cinco aborda os tipos de dados existentes em Lua, suas características e especificidades.
+
+\item Capítulo 6 - O capítulo seis mapeia o funcionamento das expressões em Lua, trazendo também as derivações das expressões como, as características dos operadores aritméticos, relacionais, lógicos, concatenação e comprimento, precedência e chamadas de funções.
+
+\item Capítulo 7 - Este capítulo explica o mecanismo de sentença de atribuição utilizado em Lua.
+
+\item Capítulo 8 - No capítulo oito é explicado como são implementadas as estruturas de controle da linguagem. 
+
+\item Capítulo 9 - O capítulo nove mostra o principal diferencial da linguagem Lua, que é o paradigma de orientação à tabelas, e com isso apresenta o sistema de metatabelas e abstração de dados.
+
+\item Capítulo 10 - O capítulo dez possui informações sobre algumas facilidades da linguagem, como o sistema modelado para tratamento de erros, o conceito de ambientes em Lua e o coletor de lixo.
+
+\end{itemize}
 
 \include{abntex2-modelo-include-comandos}
 
@@ -495,6 +511,8 @@ Aqui está a sintaxe completa de Lua na notação BNF estendida. (Ela não descr
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\linewidth]{imagens/sintaxe2.png}
+\caption{Sintaxe de Lua \cite{Lua_Org}}
+
 \end{figure}
 
 
@@ -543,7 +561,7 @@ O escopo das variáveis começa no primeiro comando depois da sua declaração e
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.5\linewidth]{imagens/imagem3.png}
-\caption{Verificação de escopo em Lua}
+\caption{Verificação de escopo em Lua \cite{Lua_Org}}
 \end{figure}
 
 Note que, em uma declaração como local x = x, o novo x sendo declarado não está no escopo ainda e portanto o segundo x se refere a uma variável externa.
@@ -662,7 +680,7 @@ A precedência de operadores em Lua segue a \textit{Tabela 1} na página seguint
 Como padrão, não existe a necessidade de usar parênteses para mudar as precedências de uma expressão. Os operadores de concatenação e de exponenciação são associativos à direita. Todos os demais operadores binários são associativos à esquerda.
 
 \section{Definições e Chamadas de Função}
-A sintaxe para a definição de uma função é
+A sintaxe para a definição de uma função é:
 
   funcao ::= function corpodafuncao
   funcao ::= ( [listapar] ) bloco end
@@ -695,8 +713,7 @@ Contudo, antes da atribuição de fato ser realizada, a lista de valores a ajust
 
 É importante lembrar que Lua não permite atribuições unárias como C, C++ ou Java que incluem dois operadores aritméticos unários, sendo eles ++ para incremento e -- para decremento. Para isso a linguagem utiliza outro recurso de atribuição que é a atribuições de expressões, como por exemplo, \textit{var = var + 1} ou \textit{var = var -1}. Além disso é permitido atribuições de mútiplas expressões a múltiplas variáveis.
 
-A semântica de atribuições para variáveis globais e campos de tabelas pode ser mudada através do uso de metatabelas. No anexo xxx são apresentados alguns exemplos de atribuições em Lua.
-
+A semântica de atribuições para variáveis globais e campos de tabelas pode ser mudada através do uso de metatabelas.
 
 \chapter{Estruturas de Controle}
 A definição de estrutura de controle é conceituada da seguinte forma, uma instrução de controle e sua coleção de comandos cuja a execução é controlada pela própria estrutura.
@@ -738,7 +755,7 @@ Conforme visto acima o primeiro iterador utiliza a palavra reservada \textbf{ipa
 É necessário lembrar que todas as estruturas de controle são adecuadas às regras de escopo das variáveis e regras de visibilidade. 
 
 \chapter{Orientação à Tabelas}
-Lua é uma linguagem multiparadigma, que contém fortemente implementados os paradigmas de programação imperativa e programação procedural, baseada no conceito de chamadas de procedimentos. Além desses dois paradigmas, Lua também tráz características de abstração de dados, que por sua vez é muito utilizado na orientação a objetos, este recurso de abstração concedido por meio das metatabelas. 
+``Lua é uma linguagem multiparadigma, que contém fortemente implementados os paradigmas de programação imperativa e programação procedural, baseada no conceito de chamadas de procedimentos'' \cite{language_Lua}. Além desses dois paradigmas, Lua também tráz características de abstração de dados, que por sua vez é muito utilizado na orientação a objetos, este recurso de abstração concedido por meio das metatabelas.
 
 Conforme já foi definido no capítulo de tipos de dados, o tipo \textbf{table} em Lua utiliza arrays associativos. Tabelas podem ser heterogêneas, ou seja, elas podem conter valores de todos os tipos, excetuado pelo valor nil. Sendo que, as tabelas são o único mecanismo de estruturação de dados em Lua, todavia, elas podem ser usadas para representar arrays comuns, tabelas de símbolos, conjuntos, registros, grafos, árvores, e outros.
 
@@ -794,7 +811,7 @@ Além de metatabelas, objetos do tipo \textbf{thread}, \textbf{function} e \text
 
 Objetos do tipo \textbf{thread} são criados compartilhando o ambiente da thread que os criou. Objetos do tipo \textbf{userdata} e funções C são criados compartilhando o ambiente da função C que os criou. As funções Lua não aninhadas (criadas por loadfile, loadstring ou load) são criadas compartilhando o ambiente da thread que as criou. E funções Lua aninhadas são criadas compartilhando o ambiente da função Lua que as criou.
 
-O ambiente associado a uma função em C pode ser diretamente acessado pelo código fonte C. Isso é usado como o ambiente padrão para outras funções C e objetos \textbf{userdata} criados pela função.
+O ambiente associado a uma função em C pode ser diretamente acessado pelo código fonte C. Isso é usado como o ambiente padrão para outras funções C e objetos \textbf{userdata} criados pela função, como é sugerido na referência \cite{Introduction}.
 
 É possível mudar o ambiente de uma função Lua ou do fluxo de execução que está sendo executado atualmente chamando \textbf{setfenv}. Além disso, é possível obter o ambiente de uma função Lua ou do fluxo de execução sendo executado atualmente chamando \textbf{getfenv}.
 
@@ -813,6 +830,11 @@ A pausa do coletor controla quanto tempo irá esperar antes de iniciar um novo c
 % ---
 \chapter{Conclusão}
 
+Com base nos argumentos apresentados, note-se que foi extraído da linguagem Lua os seus principais paradigmas e conceitos, além de um profundo estudo sobre as origens e modelagem do projeto da linguagem, para assim fornecer uma base para entender a essência de Lua.
+
+Sendo assim, é relevante evidenciar que é possível neste momento da finalização do estudo, ter a maturidade de conhecer quais são os melhores campos de problemas e projetos que Lua pode ser inserido. Além de mapear também os campos onde não seriam ideais para a aplicação da linguagem, levando em consideração aos aspectos técnicos, conceituais e até mesmo de mercado e curva de aprendizagem.
+
+Por fim, também vale exaltar a proposta de projetos feita por meio da grade do curso, pois no desenvolvimento deste projetos houve um ganho teórico fundamental na formação de todos envolvidos.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
