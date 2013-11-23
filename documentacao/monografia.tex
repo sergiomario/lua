@@ -8,7 +8,6 @@
 % ------------------------------------------------------------------------
 
 \documentclass[
-% -- opções da classe memoir --
 12pt, % tamanho da fonte
 openright, % capítulos começam em pág ímpar (insere página vazia caso preciso)
 oneside, % para impressão em verso e anverso. Oposto a twoside
@@ -18,7 +17,6 @@ a4paper, % tamanho do papel.
 %section=TITLE, % títulos de seções convertidos em letras maiúsculas
 %subsection=TITLE, % títulos de subseções convertidos em letras maiúsculas
 %subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-% -- opções do pacote babel --
 english, % idioma adicional para hifenização
 brazil, % o último idioma é o principal do documento
 ]{abntex2}
@@ -297,7 +295,7 @@ tempo de plantar, e tempo de arrancar o que se plantou\\
 
 % resumo em português
 \begin{resumo}
-Este projeto se refere à estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua. Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
+Este projeto se refere a estudos e pesquisas, relativas aos paradigmas e conceitos da linguagem de programação Lua. Para isso, foi utilizado a documentação oficial da linguagem como base contida em \cite{Lua_Org}, e os conceitos relacionados a projetos de linguagem de programação do livro \cite{Sebesta}. Como ferramentas para a elaboração do trabalho foi utilizado o latex para a parte de documentação e o sublime para a execução de códigos Lua. Com base no que foi mencionado, o projeto deseja abordar todos os conceitos e paradigmas da linguagem de programação Lua.
 
  \noindent
  \textbf{Palavras-chaves}: paradigmas. linguagem de programação. Lua. projeto.
@@ -420,7 +418,7 @@ Este trabalho está organizado em 10 capítulos, da seguinte forma:
 
 \item Capítulo 8 - No capítulo oito é explicado como são implementadas as estruturas de controle da linguagem. 
 
-\item Capítulo 9 - O capítulo nove mostra o principal diferencial da linguagem Lua, que é o paradigma de orientação à tabelas, e com isso apresenta o sistema de metatabelas e abstração de dados.
+\item Capítulo 9 - O capítulo nove mostra o principal diferencial da linguagem Lua, que é o paradigma de orientação a tabelas, e com isso apresenta o sistema de metatabelas e abstração de dados.
 
 \item Capítulo 10 - O capítulo dez possui informações sobre algumas facilidades da linguagem, como o sistema modelado para tratamento de erros, o conceito de ambientes em Lua e o coletor de lixo.
 
@@ -450,7 +448,7 @@ Logo surgiu o primeiro protótipo, DEL - Linguagem para Especificação de Diál
 \caption{Trecho de código da linguagem SOL}
 \end{figure}
 
-No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portável, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contráste da antiga SOL.
+No entanto, tanto DEL como SOL tinha várias limitações como, pouco recurso para construção de diálogos, pouca abstração de dados e incompleta se comparadas às linguagens contemporâneas a elas. Então Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes se juntaram para achar uma solução comum a seus problemas. As propostas de solução era formular uma nova linguagem de configuração genérica, que fosse facilmente acoplável, portável, simples e uma sintaxe fácil. Para o resultado desse projeto foi dado o nome LUA, como um contraste da antiga SOL.
 
 As linguagens que mais se aproximam das características de Lua são o Icon, por sua concepção, e Python, por sua facilidade de utilização. Em um artigo publicado no Dr. Dobb's Journal, os criadores de Lua também afirmam que Lisp e Scheme foram de grande influência na decisão de desenvolver a tabela como a principal estrutura de dados de Lua. Lua tem sido usada em várias aplicações, tanto comerciais como não-comerciais.
 
@@ -459,9 +457,9 @@ Versões de Lua antes da versão 5.0 foram liberadas sob uma licença similar à
 Hoje a linguagem é uma das mais utilizadas do mundo estando entre as vinte mais utilizadas.
 
 \chapter{Aspectos léxicos e sintáticos de Lua}
-Esta capítulo descreve os principais aspectos léxicos, sintáticos e semânticos da linguagem Lua. sendo assim, serão descritas quais itens léxicos são válidos, como eles são combinados, e qual o significado da sua combinação.
+Este capítulo descreve os principais aspectos léxicos, sintáticos e semânticos da linguagem Lua. Sendo assim, serão descritas quais itens léxicos são válidos, como eles são combinados, e qual o significado da sua combinação.
 
-O estudo de linguagens de programação pode ser orientado à verificação dos aspectos semânticos e sintáticos de uma linguagem. Pois a sintaxe é a forma das expressões e instruções, ou seja, como é feita a construção das mesmas. Não obstante, a semântica é o sforam ignificado das expressões e instruções.
+O estudo de linguagens de programação pode ser orientado à verificação dos aspectos semânticos e sintáticos de uma linguagem. Pois a sintaxe é a forma das expressões e instruções, ou seja, como é feita a construção das mesmas. Não obstante, a semântica é o significado das expressões e instruções.
 
 \section{Convenções Léxicas}
 Em Lua, os nomes podem ser qualquer cadeia de letras, dígitos, e sublinhados que não começam com um dígito, assim como em outras linguagens tradicionais, como C/C++. Os identificadores são usados para nomear variáveis e campos de tabelas.
@@ -471,9 +469,9 @@ Lua é uma linguagem que diferencia letras minúsculas de maiúsculas, por exemp
 As seguintes cadeias denotam outros itens léxicos:
 + - * == ~= <= >= < > = ( ) { } [ ] ; : , . .. ...
 
-As cadeias de caracteres literais podem ser delimitadas através do uso de aspas simples ou aspas duplas, e podem conter as seguintes seqüências de escape no estilo de C: `contra-barra + a' (campainha), `contra-barra + b' (backspace), `contra-barra + f' (alimentação de formulário), `contra-barra + n' (quebra de linha), `contra-barra + r' (retorno de carro), `contra-barra + t' (tabulação horizontal), `contra-barra + v' (tabulação vertical), `contra-barra + contra-barra' (barra invertida), `contra-barra + aspas duplas' (citação [aspa dupla]) e `contra-barra + aspas simples'. Além disso, uma barra invertida seguida por uma quebra de linha real resulta em uma quebra de linha na cadeia de caracteres. Um caractere em uma cadeia de caracteres também pode ser especificado pelo seu valor numérico usando a seqüência de escape contra-barra + ddd, onde ddd é uma seqüência de até três dígitos decimais. (Note que se um caractere numérico representado como um seqüência de escape for seguido por um dígito, a seqüência de escape deve possuir exatamente três dígitos.) Cadeias de caracteres em Lua podem conter qualquer valor de 8 bits, incluindo zeros dentro delas, os quais podem ser especificados como `contra-barra + 0'.
+As cadeias de caracteres literais podem ser delimitadas através do uso de aspas simples ou aspas duplas, e podem conter as seguintes sequências de escape no estilo de C: `contra barra + a' (campainha), `contra barra + b' (backspace), `contra barra + f' (alimentação de formulário), `contra barra + n' (quebra de linha), `contra barra + r' (retorno de carro), `contra barra + t' (tabulação horizontal), `contra barra + v' (tabulação vertical), `contra barra + contra barra' (barra invertida), `contra barra + aspas duplas' (citação [aspa dupla]) e `contra barra + aspas simples'. Além disso, uma barra invertida seguida por uma quebra de linha real resulta em uma quebra de linha na cadeia de caracteres. Um caractere em uma cadeia de caracteres também pode ser especificado pelo seu valor numérico usando a sequência de escape contra barra + ddd, onde ddd é uma sequência de até três dígitos decimais. (Note que se um caractere numérico representado como um sequência de escape for seguido por um dígito, a sequência de escape deve possuir exatamente três dígitos.) Cadeias de caracteres em Lua podem conter qualquer valor de 8 bits, incluindo zeros dentro delas, os quais podem ser especificados como `contra barra + 0'.
 
-Cadeias literais longas podem ser definidas usando um formato longo delimitado por colchetes. Definimos uma abertura de colchete longo de nível n como um abre colchete seguido por n sinais de igual seguido por outro abre colchete. Dessa forma, uma abertura de colchete longo de nível 0 é escrita como [[, uma abertura de colchete longo de nível 1 é escrita como [=[ e assim por diante. Um fechamento de colchete longo é definido de maneira similar. Uma cadeia de caracteres longa começa com uma abertura de colchete longo de qualquer nível e termina no primeiro fechamento de colchete longo do mesmo nível. Literais expressos desta forma podem se estender por várias linhas, não interpretam nenhuma seqüência de escape e ignoram colchetes longos de qualquer outro nível. Estes literais podem conter qualquer coisa, exceto um fechamento de colchete longo de nível igual ao da abertura.
+Cadeias literais longas podem ser definidas usando um formato longo delimitado por colchetes. Definimos uma abertura de colchete longo de nível n como um abre colchete seguido por n sinais de igual seguido por outro abre colchete. Dessa forma, uma abertura de colchete longo de nível 0 é escrita como [[, uma abertura de colchete longo de nível 1 é escrita como [=[ e assim por diante. Um fechamento de colchete longo é definido de maneira similar. Uma cadeia de caracteres longa começa com uma abertura de colchete longo de qualquer nível e termina no primeiro fechamento de colchete longo do mesmo nível. Literais expressos desta forma podem se estender por várias linhas, não interpretam nenhuma sequência de escape e ignoram colchetes longos de qualquer outro nível. Estes literais podem conter qualquer coisa, exceto um fechamento de colchete longo de nível igual ao da abertura.
 
 As seguintes palavras-chave são reservadas e não podem ser utilizadas como nomes:
 \begin{itemize}
@@ -525,28 +523,28 @@ Este capítulo apresenta as questões fundamentais das variáveis. Como tipo, en
 \section{Variáveis}
 Uma variável em uma linguagem é a abstração do conteúdo de células de memória do computador. Variáveis podem se caracterizadas de acordo com os seguintes aspectos: nome, endereço, valor, tipo, tempo de vida e escopo.
 
-Em Lua existem três tipos de variáveis, sendo elas as seguites: variáveis globais, variáveis locais e variáveis de tabelas. Sendo que, a diferença entre variáveis locais e globais é o uso da palavra reservada `local' antes do nome da variável. Já as variáveis de tabela são os nomes dados aos índices das tabelas, tendo em vista que toda a estrutura de dados linguagem é orientada à tabelas.
+Em Lua existem três tipos de variáveis, sendo elas as seguintes: variáveis globais, variáveis locais e variáveis de tabelas. Sendo que, a diferença entre variáveis locais e globais é o uso da palavra reservada `local' antes do nome da variável. Já as variáveis de tabela são os nomes dados aos índices das tabelas, tendo em vista que toda a estrutura de dados linguagem é orientada à tabelas.
 
 \section{Vinculação}
-O termo vinculação é uma associação ou uma referência, como, por exemplo, entre uma atributo e uma entidade e entre uma operação e um símbolo. O momento em que ocorre a vinculação é denominado como tempo de vinculação. Isso porquê, as vinculações podem ocorrer no tempo de projeto da linguagem, no tempo de implementação, no tempo de compilação, no tempo de ligação, no tempo de carregamento ou no tempo de execução. Um bom exemplo disso é que o operador `+' é vinculado no tempo de projeto da linguagem.
+O termo vinculação é uma associação ou uma referência, como, por exemplo, entre um atributo e uma entidade e entre uma operação e um símbolo. O momento em que ocorre a vinculação é denominado como tempo de vinculação. Isso porque, as vinculações podem ocorrer no tempo de projeto da linguagem, no tempo de implementação, no tempo de compilação, no tempo de ligação, no tempo de carregamento ou no tempo de execução. Um bom exemplo disso é que o operador `+' é vinculado no tempo de projeto da linguagem.
 
-Lua é uma linguagem dinamicamente tipada. Isto significa que variáveis não possuem tipos, porém somente valores possuem tipos. Não existem definições de tipos na linguagem, pois todos os valores carregam o seu próprio tipo de dados. Logo Lua utilizaça um método de decleração implícita de variáveis.
+Lua é uma linguagem dinamicamente tipada. Isto significa que variáveis não possuem tipos, porém somente valores possuem tipos. Não existem definições de tipos na linguagem, pois todos os valores carregam o seu próprio tipo de dados. Logo Lua utiliza um método de decleração implícita de variáveis.
 
-A linguagem trabalha com vinculação dinâmica de tipos, logo o tipo não é especificado por uma instrução de declaração, como em C ou em Java. Em vez disso, a variável é vinculada a um tipo quando lhe é atribuida um valor em uma instrução de atribuição.
+A linguagem trabalha com vinculação dinâmica de tipos, logo o tipo não é especificado por uma instrução de declaração, como em C ou em Java. Em vez disso, a variável é vinculada a um tipo quando lhe é atribuido um valor em uma instrução de atribuição.
 
-Este modelo apresenta muitas diferenças com relação aos tipos estaticamente vinculados. A principal vantagem de vinculação dinâmica de variáveis a tipos é que ele tráz muita flexibilidade para a programação.
+Este modelo apresenta muitas diferenças com relação aos tipos estaticamente vinculados. A principal vantagem de vinculação dinâmica de variáveis a tipos é que ele trás muita flexibilidade para a programação.
 
 \section{Verificação de Tipos}
 A verificação de tipos é um módulo que assegura que os operandos de um operador sejam de tipos compatíveis.
 
-Em Lua devido a vinculação dinâmica de tipos, permite somente a verificação dinâmica de tipos. No entanto há uma desvantagem, pois é melhor detectar erros durante a compilação do que na execução porque, quanto mais cedo feita a correção melhor, normalmente terá menos custo.
+Em Lua devido à vinculação dinâmica de tipos, permite somente a verificação dinâmica de tipos. No entanto há uma desvantagem, pois é melhor detectar erros durante a compilação do que na execução porque, quanto mais cedo feita a correção melhor, normalmente terá menos custo.
 
 Sendo assim, a verificação de tipos em Lua é feita em tempo de execução pelo interpretador Lua.
 
 \section{Escopo}
-O escopo de uma variável em uma linguagem é a faixa de instruções na qual a variável é visível. Uma variável é visível em uma instrução se puder ser referenciada nessa instrução, ou seja se uma instrução conseguer ter acesso a essa variável no bloco ou setor em que se encontra.
+O escopo de uma variável em uma linguagem é a faixa de instruções na qual a variável é visível. Uma variável é visível em uma instrução se puder ser referenciada nessa instrução, ou seja, se uma instrução consegue ter acesso a essa variável no bloco ou setor em que se encontra.
 
-Tendo em vista que existem dois tipos de escopo, sendo eles o escopo estático e o escopo dinâmico, Lua trabalha na modelagem de escopo léxico, logo baseia-se na sequência de chamadas de subprogramas. Dessa forma, o escopo pode ser determidado em tempo de execução.
+Tendo em vista que existem dois tipos de escopo, sendo eles o escopo estático e o escopo dinâmico, Lua trabalha na modelagem de escopo léxico, logo baseia-se na sequência de chamadas de subprogramas. Dessa forma, o escopo pode ser determinado em tempo de execução.
 
 Assume-se que toda variável é uma variável global a menos que ela seja explicitamente declarada como uma variável local. Variáveis locais possuem escopo léxico, por isso podem ser livremente acessadas por funções definidas dentro do seu escopo ou bloco.
 
@@ -569,7 +567,7 @@ Note que, em uma declaração como local x = x, o novo x sendo declarado não es
 Por causa das regras de escopo léxico, variáveis locais podem ser livremente acessadas por funções definidas dentro do seu escopo. Uma variável local usada por uma função mais interna é chamada de upvalue ou variável local externa, dentro da função mais interna.
 
 \chapter{Tipos de Dados em Lua}
-Os tipos de dados de uma linguagem de programação, são um dos fatores de maior importância para determinar a facilidade com que os programas podem executar problemas do mundo real. Pois para algumas aplicações certos tipos de dados conseguem mapear bem um tipo de problema. Portanto é imprescindível que uma linguagem suporte vários tipos de dados e estruturas.
+Os tipos de dados de uma linguagem de programação são um dos fatores de maior importância para determinar a facilidade com que os programas podem executar problemas do mundo real. Pois para algumas aplicações certos tipos de dados conseguem mapear bem um tipo de problema. Portanto é imprescindível que uma linguagem suporte vários tipos de dados e estruturas.
 
 Existem oito tipos de dados básicos em Lua, são eles, nil, boolean, number, string, function, userdata, thread e table. Nil é o tipo do valor nulo, cuja propriedade principal é ser diferente de qualquer outro valor, ele geralmente representa a ausência de um valor útil. Boolean é o tipo dos valores false e true. Tanto nil como false tornam uma condição falsa, sendo que, qualquer outro valor torna a condição verdadeira. Number representa números reais (ponto flutuante de precisão dupla). O tipo string representa cadeias de caracteres.
 
@@ -647,7 +645,7 @@ Com base no que foi mencionado observe o seguinte exemplo:
 \caption{Concatenação de variáveis com cadeia de caracteres}
 \end{figure}
 
-O operador de comprimento é denotado pelo operador unário \#. O comprimento de uma cadeia de caracteres, por exemplo é o seu número de bytes. O comprimento de uma tabela t é definido como qualquer índice inteiro n tal que t[n] não é nil e t[n+1] é nil, além disso, se t[1] é nil, n pode ser zero. Para um array comum, com todos os valores diferentes de nil indo de 1 até n, o seu comprimento é exatamente n. Se o array possuir intervalos descontínuos, então \#t pode ser qualquer um dos índices que imediatamente precedem um valor nil.
+O operador de comprimento é denotado pelo operador unário \#. O comprimento de uma cadeia de caracteres, por exemplo, é o seu número de bytes. O comprimento de uma tabela t é definido como qualquer índice inteiro n tal que t[n] não é nil e t[n+1] é nil, além disso, se t[1] é nil, n pode ser zero. Para um array comum, com todos os valores diferentes de nil indo de 1 até n, o seu comprimento é exatamente n. Se o array possuir intervalos descontínuos, então \#t pode ser qualquer um dos índices que imediatamente precedem um valor nil.
 
 \section{Precedência}
 A precedência de operadores em Lua segue a \textit{Tabela 1} na página seguinte, na ordem de menor prioridade para a maior:
@@ -701,22 +699,22 @@ Em uma chamada de função, primeiro \textbf{expprefixo} e \textbf{args} são av
 \caption{Chamada de Função em Lua}
 \end{figure}
 
-Uma chamada de funcao da forma return é denominada de chamada final. Portanto, Lua implementa chamadas finais próprias em uma chamada final, logo a função chamada reusa a entrada na pilha da função que a chamou. Sendo assim, não há limite no número de chamadas finais aninhadas que um programa pode executar. Note que uma chamada final somente acontece com uma sintaxe particular, onde o return possui uma única chamada de função como argumento.
+Uma chamada de funçao da forma return é denominada de chamada final. Portanto, Lua implementa chamadas finais próprias em uma chamada final, logo a função chamada reusa a entrada na pilha da função que a chamou. Sendo assim, não há limite no número de chamadas finais aninhadas que um programa pode executar. Note que uma chamada final somente acontece com uma sintaxe particular, onde o return possui uma única chamada de função como argumento.
 
 \chapter{Sentenças de Atribuição}
-A instrução de atribuição é uma das instruções fundamentais das linguagens imperativas, pois oferece um mecanismo por meio do qual o usuário pode modificar dinâmicamente as vinculações e os valores das variáveis.
+A instrução de atribuição é uma das instruções fundamentais das linguagens imperativas, pois oferece um mecanismo por meio do qual o usuário pode modificar dinamicamente as vinculações e os valores das variáveis.
 
-Lua permite atribuições simples e mútiplas. Em virtude disto, a sintaxe para a atribuição define uma lista de variáveis no lado esquerdo e uma lista de expressões do lado direito. Sendo que os elementos em ambos os lados são separados por vírgula. Logo:
+Lua permite atribuições simples e múltiplas. Em virtude disto, a sintaxe para a atribuição define uma lista de variáveis no lado esquerdo e uma lista de expressões do lado direito. Sendo que os elementos em ambos os lados são separados por vírgula. Logo:
 \textbf{Comando de Atribuição -> Lista de Variáveis = Lista de Expressões}
 
 Contudo, antes da atribuição de fato ser realizada, a lista de valores a ajustada de acordo com o comprimento da lista de variáveis. Sendo assim, se houver mais valores do que variáveis esses valores são descartados, caso contrário, se houver menos valores a lista é completada com valores nulos (nil).
 
-É importante lembrar que Lua não permite atribuições unárias como C, C++ ou Java que incluem dois operadores aritméticos unários, sendo eles ++ para incremento e -- para decremento. Para isso a linguagem utiliza outro recurso de atribuição que é a atribuições de expressões, como por exemplo, \textit{var = var + 1} ou \textit{var = var -1}. Além disso é permitido atribuições de mútiplas expressões a múltiplas variáveis.
+É importante lembrar que Lua não permite atribuições unárias como C, C++ ou Java que incluem dois operadores aritméticos unários, sendo eles ++ para incremento e -- para decremento. Para isso a linguagem utiliza outro recurso de atribuição que é a atribuições de expressões, como por exemplo, \textit{var = var + 1} ou \textit{var = var -1}. Além disso, é permitido atribuições de mútiplas expressões a múltiplas variáveis.
 
 A semântica de atribuições para variáveis globais e campos de tabelas pode ser mudada através do uso de metatabelas.
 
 \chapter{Estruturas de Controle}
-A definição de estrutura de controle é conceituada da seguinte forma, uma instrução de controle e sua coleção de comandos cuja a execução é controlada pela própria estrutura.
+A definição de estrutura de controle é conceituada da seguinte forma, uma instrução de controle e sua coleção de comandos cuja execução é controlada pela própria estrutura.
 
 Em Lua as estruturas de controle \textbf{if}, \textbf{while} e \textbf{repeat} possuem o significado usual e a sintaxe familiar, conforme abaixo:
 
@@ -742,7 +740,7 @@ Os comandos \textbf{return} e \textbf{break} somente podem ser escritos como o �
 
 Lua possui duas variações do comando \textbf{for}, sendo uma numérica e outra genérica. O laço for numérico repete um bloco de código enquanto uma variável de controle varia de acordo com uma progressão aritmética. Já o laço for genérico funciona utilizando funções, chamadas de iteradoras. A cada iteração, a função iteradora é chamada para produzir um novo valor, parando quando este novo valor é nil.
 
-Além disso o \textbf{for} em Lua pode iterar específicamente sobre os elementos de uma tabela Lua de duas formas distintas, utilizando o modelo genérico já apresentado. Conforme abaixo:
+Além disso o \textbf{for} em Lua pode iterar especificamente sobre os elementos de uma tabela Lua de duas formas distintas, utilizando o modelo genérico já apresentado. Conforme abaixo:
 
 \begin{figure}[H]
 \centering
@@ -750,12 +748,12 @@ Além disso o \textbf{for} em Lua pode iterar específicamente sobre os elemento
 \caption{Exemplo de iteradores em tabelas Lua}
 \end{figure}
 
-Conforme visto acima o primeiro iterador utiliza a palavra reservada \textbf{ipairs}, isso significa que o \textbf{for} irá iterar obedecendo a ordenação e sequenciamento dos índices. Por isso, no log de execução do primeiro iterador não é verificada a vazualização dos dois últimos valores da tabela, já que os mesmo possuem índices no formado de cadeia de caracteres. Em contrapartida, o segundo exemplo do for itera sob todos o índices da tabela independentemente do sequenciamento.
+Conforme visto acima o primeiro iterador utiliza a palavra reservada \textbf{ipairs}, isso significa que o \textbf{for} irá iterar obedecendo a ordenação e sequenciamento dos índices. Por isso, no log de execução do primeiro iterador não é verificada a vasualização dos dois últimos valores da tabela, já que os mesmo possuem índices no formado de cadeia de caracteres. Em contrapartida, o segundo exemplo do for itera sob todos os índices da tabela independentemente do sequenciamento.
 
-É necessário lembrar que todas as estruturas de controle são adecuadas às regras de escopo das variáveis e regras de visibilidade. 
+É necessário lembrar que todas as estruturas de controle são adequadas às regras de escopo das variáveis e regras de visibilidade. 
 
 \chapter{Orientação à Tabelas}
-``Lua é uma linguagem multiparadigma, que contém fortemente implementados os paradigmas de programação imperativa e programação procedural, baseada no conceito de chamadas de procedimentos'' \cite{language_Lua}. Além desses dois paradigmas, Lua também tráz características de abstração de dados, que por sua vez é muito utilizado na orientação a objetos, este recurso de abstração concedido por meio das metatabelas.
+``Lua é uma linguagem multiparadigma, que contém fortemente implementados os paradigmas de programação imperativa e programação procedural, baseada no conceito de chamadas de procedimentos'' \cite{language_Lua}. Além desses dois paradigmas, Lua também trás características de abstração de dados, que por sua vez é muito utilizado na orientação a objetos, este recurso de abstração concedido por meio das metatabelas.
 
 Conforme já foi definido no capítulo de tipos de dados, o tipo \textbf{table} em Lua utiliza arrays associativos. Tabelas podem ser heterogêneas, ou seja, elas podem conter valores de todos os tipos, excetuado pelo valor nil. Sendo que, as tabelas são o único mecanismo de estruturação de dados em Lua, todavia, elas podem ser usadas para representar arrays comuns, tabelas de símbolos, conjuntos, registros, grafos, árvores, e outros.
 
@@ -834,7 +832,7 @@ Com base nos argumentos apresentados, note-se que foi extraído da linguagem Lua
 
 Sendo assim, é relevante evidenciar que é possível neste momento da finalização do estudo, ter a maturidade de conhecer quais são os melhores campos de problemas e projetos que Lua pode ser inserido. Além de mapear também os campos onde não seriam ideais para a aplicação da linguagem, levando em consideração aos aspectos técnicos, conceituais e até mesmo de mercado e curva de aprendizagem.
 
-Por fim, também vale exaltar a proposta de projetos feita por meio da grade do curso, pois no desenvolvimento deste projetos houve um ganho teórico fundamental na formação de todos envolvidos.
+Por fim, também vale exaltar a proposta de projetos feita por meio da grade do curso, pois no desenvolvimento deste projeto houve um ganho teórico fundamental na formação de todos envolvidos.
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
