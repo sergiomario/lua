@@ -4,29 +4,29 @@ This project aims to promote an overview Lua language, and implementation of the
 
 ## Topics
 
-Syntax
----
+* Syntax
 
-Datatypes
----
 
-Strings
----
+* Datatypes
 
-Numbers and tip Calulators
----
 
-Data and Time
----
+* Strings
 
-Functions
----
 
-Tables
----
+* Numbers and tip Calulators
 
-Object Orientation
----
 
-Canvas
----
+* Data and Time
+
+
+* Functions
+
+
+* Tables
+
+
+* Object Orientation
+
+
+* Canvas
+
