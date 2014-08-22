@@ -2,31 +2,44 @@ This project aims to promote an overview Lua language, and implementation of the
 
 ![Lua](docs/images/lua.png "Lua")
 
-## Topics
+## Lua Language
+
+### Basic Concepts
 
 * Syntax
 
+### Variables
 
 * Datatypes
 
+* String Manipulation
 
-* Strings
-
+* boolean
 
 * Numbers and tip Calulators
 
+### Control Structures
 
-* Data and Time
-
+* Loops
 
 * Functions
 
+* Scope
 
-* Tables
+### Expressions
 
+* Arithmetic Operators
 
-* Object Orientation
+* Logical and Relational Operators
 
+* Concatenation
 
-* Canvas
+### Tables
 
+* Table Manipulation
+
+* Metatables and Metamethods
+
+### Object Orientation
+
+### Canvas
